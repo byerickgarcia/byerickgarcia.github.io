@@ -1,0 +1,62 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contato — Erick Garcia</title>
+<link rel="stylesheet" href="assets/css/style.css"></head><body>
+<div id="header"></div>
+<main>
+  <section class="section container">
+    <h2>Contato</h2>
+    <p class="muted">Preencha e eu te retorno no WhatsApp.</p>
+
+    <form id="form" class="card" style="max-width:720px">
+      <div class="grid" style="grid-template-columns:1fr 1fr">
+        <label>Nome<br><input id="nome" required style="width:100%"></label>
+        <label>E-mail<br><input id="email" type="email" required style="width:100%"></label>
+      </div>
+      <div class="grid" style="grid-template-columns:1fr 1fr">
+        <label>WhatsApp<br><input id="whats" placeholder="(DDD) 9 9999-9999" required style="width:100%"></label>
+        <label>Serviço<br>
+          <select id="servico" style="width:100%">
+            <option value="">Escolha…</option>
+            <option>Social Media</option><option>Fotografia</option>
+            <option>Videomaker</option><option>Combo 3 em 1</option>
+          </select>
+        </label>
+      </div>
+      <label>Pacote<br><input id="pacote" placeholder="Ex.: Pro / Growth / Starter" style="width:100%"></label>
+      <label>Mensagem<br><textarea id="msg" rows="5" style="width:100%" placeholder="Fale um pouco do seu projeto"></textarea></label>
+      <div style="display:flex;gap:12px;margin-top:14px">
+        <button class="btn" type="submit">Enviar briefing</button>
+        <a class="btn ghost" id="waDirect" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+    </form>
+  </section>
+</main>
+<div id="footer"></div>
+<script src="assets/js/main.js"></script>
+<script>
+  // pré-preenche "pacote" vindo de planos.html
+  const q = new URLSearchParams(location.search);
+  const pac = q.get('pacote'); if(pac) document.getElementById('pacote').value = pac;
+
+  const wa = "https://wa.me/5543988632851?text=";
+  const form = document.getElementById('form');
+  const waBtn = document.getElementById('waDirect');
+  waBtn.href = wa + encodeURIComponent("Oi Erick! Vim pelo site e quero conversar.");
+
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    const payload =
+`Oi Erick! Enviei um briefing pelo site:
+
+Nome: ${nome.value}
+Email: ${email.value}
+WhatsApp: ${whats.value}
+Serviço: ${servico.value||'-'}
+Pacote: ${pacote.value||'-'}
+Mensagem: ${msg.value||'-'}`;
+    window.open(wa + encodeURIComponent(payload),'_blank','noopener');
+    form.reset();
+  });
+</script>
+</body></html>
