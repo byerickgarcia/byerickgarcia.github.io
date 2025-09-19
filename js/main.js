@@ -1,138 +1,158 @@
-// Ano no footer
-document.getElementById('year').textContent = new Date().getFullYear();
+/*
+  Erick Garcia – JS Base
+  - Menu mobile
+  - Scroll reveal
+  - Lightbox acessível
+  - Âncoras com scroll suave
+  - Validação do formulário + WhatsApp
+*/
 
-// Progress bar do scroll
-const progress = document.getElementById('progress');
-const onScroll = () => {
-  const h = document.documentElement;
-  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
-  progress.style.width = (scrolled * 100) + '%';
-};
-document.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+// ---------- helpers
+const $ = (sel, ctx = document) => ctx.querySelector(sel);
+const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-// Mobile menu
-const hamb = document.getElementById('hamb');
-const mobile = document.getElementById('mobile');
-if (hamb && mobile) {
-  hamb.addEventListener('click', () => {
-    const open = mobile.getAttribute('aria-hidden') === 'true';
-    mobile.setAttribute('aria-hidden', open ? 'false' : 'true');
-    hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+// ---------- menu mobile
+(() => {
+  const nav = $('.nav');
+  const btn = $('.menu-toggle');
+  const links = $('.nav-links');
+  if (!btn || !nav || !links) return;
+
+  btn.addEventListener('click', () => {
+    nav.classList.toggle('is-open');
+    const expanded = nav.classList.contains('is-open');
+    btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
   });
-  // Fechar ao clicar em link
-  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    mobile.setAttribute('aria-hidden', 'true');
-    hamb.setAttribute('aria-expanded', 'false');
-  }));
-}
 
-// Reveal on scroll
-if ('IntersectionObserver' in window) {
+  links.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') nav.classList.remove('is-open');
+  });
+})();
+
+// ---------- smooth anchors (só para a mesma página)
+(() => {
+  $$('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      const el = $(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', id);
+    });
+  });
+})();
+
+// ---------- scroll reveal
+(() => {
+  const els = $$('.reveal');
+  if (!('IntersectionObserver' in window) || !els.length) {
+    els.forEach(el => el.classList.add('is-in'));
+    return;
+  }
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.classList.add('visible');
+        e.target.classList.add('is-in');
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-} else {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-}
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(el => io.observe(el));
+})();
 
-// Lightbox (teclado e clique)
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lb-img');
-const lbCap = document.getElementById('lb-cap');
-const lbClose = lb.querySelector('.lb-close');
-let galleryItems = Array.from(document.querySelectorAll('.g-item'));
-let currentIndex = -1;
+// ---------- lightbox simples e acessível
+(() => {
+  const lb = $('#lightbox');
+  if (!lb) return;
 
-function openLB(index) {
-  const btn = galleryItems[index];
-  if (!btn) return;
-  lbImg.src = btn.dataset.img;
-  lbImg.alt = btn.dataset.cap || '';
-  lbCap.textContent = btn.dataset.cap || '';
-  currentIndex = index;
-  lb.setAttribute('aria-hidden', 'false');
-  lb.classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
+  const img = $('#lightbox-img');
+  const caption = $('#lightbox-caption');
+  const close = $('#lightbox-close');
 
-function closeLB() {
-  lb.classList.remove('show');
-  lb.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = 'auto';
-  currentIndex = -1;
-}
+  let lastFocus = null;
 
-galleryItems.forEach((btn, i) => {
-  btn.addEventListener('click', () => openLB(i));
-});
+  window.openLightbox = (src, cap = '') => {
+    lastFocus = document.activeElement;
+    img.src = src;
+    img.alt = cap;
+    caption.textContent = cap;
+    lb.classList.add('is-active');
+    lb.setAttribute('aria-hidden', 'false');
+    setTimeout(() => img.focus(), 50);
+    document.body.style.overflow = 'hidden';
+  };
 
-lbClose.addEventListener('click', closeLB);
-lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
-document.addEventListener('keydown', (e) => {
-  if (lb.classList.contains('show')) {
-    if (e.key === 'Escape') closeLB();
-    if (e.key === 'ArrowRight') openLB(Math.min(currentIndex + 1, galleryItems.length - 1));
-    if (e.key === 'ArrowLeft') openLB(Math.max(currentIndex - 1, 0));
-  }
-});
+  window.closeLightbox = () => {
+    lb.classList.remove('is-active');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  };
 
-// Parallax leve no hero (performance safe)
-const hero = document.querySelector('.hero-bg');
-let raf;
-window.addEventListener('mousemove', (e) => {
-  if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (raf) cancelAnimationFrame(raf);
-  raf = requestAnimationFrame(() => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 6;
-    const y = (e.clientY / window.innerHeight - 0.5) * 6;
-    hero.style.transform = `translate(${x}px, ${y}px)`;
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb) window.closeLightbox();
   });
-});
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.classList.contains('is-active')) window.closeLightbox();
+  });
+  if (close) close.addEventListener('click', window.closeLightbox);
+})();
 
-// Form -> WhatsApp
-const form = document.getElementById('contact-form');
-function err(id, msg) {
-  const el = document.getElementById(id);
-  if (el) { el.textContent = msg; el.hidden = !msg; }
-}
-function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+// ---------- formulário -> WhatsApp
+(() => {
+  const form = $('#contact-form');
+  if (!form) return;
 
-if (form) {
+  const get = (id) => $(id);
+  const showError = (id, msg) => {
+    const el = get(id);
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.add('is-visible');
+  };
+  const clearErrors = () => $$('.helper').forEach(h => { h.textContent = ''; h.classList.remove('is-visible'); });
+  const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    err('nome-error',''); err('whatsapp-error',''); err('email-error','');
+    clearErrors();
 
-    const nome = document.getElementById('nome').value.trim();
-    const whatsapp = document.getElementById('whatsapp').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const projeto = document.getElementById('projeto').value;
-    const orcamento = document.getElementById('orcamento').value;
-    const mensagem = document.getElementById('mensagem').value;
-
+    const nome = $('#nome')?.value.trim();
+    const whatsapp = $('#whatsapp')?.value.trim();
+    const email = $('#email')?.value.trim();
     let ok = true;
-    if (!nome){ err('nome-error','Nome é obrigatório'); ok = false; }
-    if (!whatsapp){ err('whatsapp-error','WhatsApp é obrigatório'); ok = false; }
-    if (!email || !validEmail(email)){ err('email-error','E-mail válido é obrigatório'); ok = false; }
+
+    if (!nome) { showError('#nome-error', 'Nome é obrigatório'); ok = false; }
+    if (!whatsapp) { showError('#whatsapp-error', 'WhatsApp é obrigatório'); ok = false; }
+    if (!email || !isEmail(email)) { showError('#email-error', 'E-mail válido é obrigatório'); ok = false; }
+
     if (!ok) return;
+
+    const projeto = $('#projeto')?.value || 'Não especificado';
+    const orcamento = $('#orcamento')?.value || 'Não especificado';
+    const mensagem = $('#mensagem')?.value || 'Nenhuma mensagem adicional';
 
     const text = `Oi Erick! Enviei um briefing pelo site:
 
 Nome: ${nome}
 Email: ${email}
 WhatsApp: ${whatsapp}
-Projeto: ${projeto || 'Não especificado'}
-Orçamento: ${orcamento || 'Não especificado'}
-Mensagem: ${mensagem || 'Nenhuma mensagem adicional'}`;
+Projeto: ${projeto}
+Orçamento: ${orcamento}
+Mensagem: ${mensagem}`;
 
     const url = `https://wa.me/5543988632851?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
     form.reset();
+    alert('Briefing enviado! Abrindo o WhatsApp…');
   });
-}
+})();
+
+// ---------- melhoria de performance (lazy nos <img> que faltarem)
+(() => {
+  $$('img').forEach(img => {
+    if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+    img.setAttribute('decoding', 'async');
+  });
+})();
