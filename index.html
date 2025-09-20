@@ -4,13 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Erick Garcia — Conteúdo que vira clientes</title>
-  <meta name="description" content="Fotografia, vídeos curtos e social media com método. Site leve, claro e focado em resultado.">
+  <meta name="description" content="Fotografia, vídeos curtos e social media com método. Site limpo, harmonioso e focado em resultado.">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0D1117">
+  <meta name="theme-color" content="#0B1220">
   <link rel="canonical" href="https://byerickgarcia.github.io/">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <!-- tipografia neutra e confortável -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,9 +17,9 @@
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
   <!-- HEADER -->
-  <header class="hdr">
+  <header class="hdr" role="banner">
     <div class="wrap nav">
-      <a class="brand" href="#inicio" aria-label="Início">Erick Garcia</a>
+      <a class="brand" href="#inicio">Erick Garcia</a>
       <button id="menuToggle" class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
       <nav id="menu" class="menu" role="navigation">
         <a href="#sobre">Sobre</a>
@@ -32,8 +31,9 @@
   </header>
 
   <main id="conteudo">
-    <!-- HERO -->
-    <section id="inicio" class="sec hero">
+
+    <!-- HERO (clean) -->
+    <section id="inicio" class="sec hero" aria-label="Destaque">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Ibiporã & Londrina • PT-BR</p>
@@ -41,24 +41,24 @@
           <p class="lead">Estratégia simples, gravação enxuta e edição com identidade. Menos ruído, mais autoridade — todo mês.</p>
           <div class="actions">
             <a class="btn primary" href="https://wa.me/5543988632851?text=Quero%20crescer%20com%20conte%C3%BAdo">Começar pelo WhatsApp</a>
-            <a class="btn" href="#planos">Ver planos</a>
+            <a class="btn ghost" href="#planos">Ver planos</a>
           </div>
         </div>
-        <figure class="hero-media" aria-label="Retrato">
+        <figure class="hero-media" aria-label="Retrato de Erick">
           <img src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Erick Garcia" width="900" height="900" loading="eager" decoding="async">
         </figure>
       </div>
     </section>
 
-    <!-- SOBRE (curto e humano) -->
-    <section id="sobre" class="sec soft">
+    <!-- SOBRE (curto) -->
+    <section id="sobre" class="sec soft" aria-label="Sobre">
       <div class="wrap grid-2">
         <div>
-          <h2 class="h2">Valor acima de preço</h2>
-          <p>Eu cuido do que importa: clareza da mensagem e constância. Você fala com a sua audiência como gente, sem parecer anúncio.</p>
+          <h2 class="h2">Valor antes de preço</h2>
+          <p>Eu cuido do que importa: clareza de mensagem e constância. Você soa como gente, não como anúncio.</p>
           <ul class="list">
             <li>Roteiro direto e tom de conversa.</li>
-            <li>Captação em lote, áudio limpo e enquadramento que respira.</li>
+            <li>Captação em lote + áudio limpo.</li>
             <li>Identidade visual que vira assinatura.</li>
           </ul>
         </div>
@@ -68,68 +68,66 @@
       </div>
     </section>
 
-    <!-- PLANOS (clean + desconto trimestral) -->
-    <section id="planos" class="sec">
+    <!-- PLANOS (Mensal • Trimestral -10% • Anual -15%) -->
+    <section id="planos" class="sec" aria-label="Planos">
       <div class="wrap">
         <h2 class="h2">Planos Mensais</h2>
-        <p class="muted small">Opção de contrato trimestral com <strong>10% OFF</strong> (pagamento mensal).</p>
+        <p class="muted small">Valores por período. Trimestral com <strong>10% OFF</strong> e Anual com <strong>15% OFF</strong> (pagamento mensal; sem total exibido).</p>
 
         <div class="plans-grid">
           <!-- Fotografia -->
           <article class="card">
             <h3>📸 Fotografia</h3>
-            <p class="micro">Retratos, eventos e produto — prontos para redes.</p>
-            <table class="plan-table">
-              <tr><th>Plano</th><th>Mensal</th><th>Trimestral*</th><th>Total 3 meses</th></tr>
-              <tr><td>Start</td><td>R$ 1.200</td><td>R$ 1.080</td><td>R$ 3.240</td></tr>
-              <tr><td>Pro</td><td>R$ 1.700</td><td>R$ 1.530</td><td>R$ 4.590</td></tr>
+            <p class="micro">Retratos, evento e produto — entrega pronta para redes.</p>
+            <table class="plan-table three">
+              <tr><th>Plano</th><th>Mensal</th><th>Trimestral (-10%)</th><th>Anual (-15%)</th></tr>
+              <tr><td>Start</td><td>R$ 1.200</td><td>R$ 1.080</td><td>R$ 1.020</td></tr>
+              <tr><td>Pro</td>  <td>R$ 1.700</td><td>R$ 1.530</td><td>R$ 1.445</td></tr>
             </table>
-            <a class="btn ghost" href="https://wa.me/5543988632851?text=Plano%20Fotografia">Quero este</a>
+            <a class="btn ghost" href="https://wa.me/5543988632851?text=Quero%20o%20Plano%20Fotografia">Quero este</a>
           </article>
 
           <!-- Videomaker -->
           <article class="card">
             <h3>🎬 Videomaker</h3>
-            <p class="micro">Vídeos curtos semanais + 1 longo/mês, com ritmo e clareza.</p>
-            <table class="plan-table">
-              <tr><th>Plano</th><th>Mensal</th><th>Trimestral*</th><th>Total 3 meses</th></tr>
-              <tr><td>Start</td><td>R$ 1.900</td><td>R$ 1.710</td><td>R$ 5.130</td></tr>
-              <tr><td>Pro</td><td>R$ 2.600</td><td>R$ 2.340</td><td>R$ 7.020</td></tr>
+            <p class="micro">3–5 vídeos curtos/semana + 1 longo/mês, ritmo e clareza.</p>
+            <table class="plan-table three">
+              <tr><th>Plano</th><th>Mensal</th><th>Trimestral (-10%)</th><th>Anual (-15%)</th></tr>
+              <tr><td>Start</td><td>R$ 1.900</td><td>R$ 1.710</td><td>R$ 1.615</td></tr>
+              <tr><td>Pro</td>  <td>R$ 2.600</td><td>R$ 2.340</td><td>R$ 2.210</td></tr>
             </table>
-            <a class="btn ghost" href="https://wa.me/5543988632851?text=Plano%20Videomaker">Quero este</a>
+            <a class="btn ghost" href="https://wa.me/5543988632851?text=Quero%20o%20Plano%20Videomaker">Quero este</a>
           </article>
 
           <!-- Social Media -->
           <article class="card">
             <h3>💻 Social Media</h3>
             <p class="micro">Pauta, copy, design e gestão. Relatórios sem enrolação.</p>
-            <table class="plan-table">
-              <tr><th>Plano</th><th>Mensal</th><th>Trimestral*</th><th>Total 3 meses</th></tr>
-              <tr><td>Start</td><td>R$ 1.600</td><td>R$ 1.440</td><td>R$ 4.320</td></tr>
-              <tr><td>Pro</td><td>R$ 2.200</td><td>R$ 1.980</td><td>R$ 5.940</td></tr>
+            <table class="plan-table three">
+              <tr><th>Plano</th><th>Mensal</th><th>Trimestral (-10%)</th><th>Anual (-15%)</th></tr>
+              <tr><td>Start</td><td>R$ 1.600</td><td>R$ 1.440</td><td>R$ 1.360</td></tr>
+              <tr><td>Pro</td>  <td>R$ 2.200</td><td>R$ 1.980</td><td>R$ 1.870</td></tr>
             </table>
-            <a class="btn ghost" href="https://wa.me/5543988632851?text=Plano%20Social%20Media">Quero este</a>
+            <a class="btn ghost" href="https://wa.me/5543988632851?text=Quero%20o%20Plano%20Social%20Media">Quero este</a>
           </article>
 
           <!-- Social Ninja -->
           <article class="card featured">
             <h3>🥷 Social Ninja <span class="badge">Mais escolhido</span></h3>
-            <p class="micro">Combo completo: Fotografia + Videomaker + Social Media.</p>
-            <table class="plan-table">
-              <tr><th>Plano</th><th>Mensal</th><th>Trimestral*</th><th>Total 3 meses</th></tr>
-              <tr><td>Start</td><td>R$ 3.400</td><td>R$ 3.060</td><td>R$ 9.180</td></tr>
-              <tr><td>Pro</td><td>R$ 4.800</td><td>R$ 4.320</td><td>R$ 12.960</td></tr>
+            <p class="micro">Combo completo: Social + Foto + Vídeo no mesmo fluxo.</p>
+            <table class="plan-table three">
+              <tr><th>Plano</th><th>Mensal</th><th>Trimestral (-10%)</th><th>Anual (-15%)</th></tr>
+              <tr><td>Start</td><td>R$ 3.400</td><td>R$ 3.060</td><td>R$ 2.890</td></tr>
+              <tr><td>Pro</td>  <td>R$ 4.800</td><td>R$ 4.320</td><td>R$ 4.080</td></tr>
             </table>
-            <a class="btn primary" href="https://wa.me/5543988632851?text=Plano%20Social%20Ninja">Fechar agora</a>
+            <a class="btn primary" href="https://wa.me/5543988632851?text=Quero%20o%20Plano%20Social%20Ninja">Fechar agora</a>
           </article>
         </div>
-
-        <p class="muted small">* valor mensal com desconto no contrato trimestral</p>
       </div>
     </section>
 
-    <!-- PROVA (prints reais) -->
-    <section id="prova" class="sec soft">
+    <!-- PROVA -->
+    <section id="prova" class="sec soft" aria-label="Prova social">
       <div class="wrap grid-2">
         <figure class="card">
           <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Conjunto Instagram" loading="lazy">
@@ -143,7 +141,7 @@
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" class="sec">
+    <section id="contato" class="sec" aria-label="Contato">
       <div class="wrap">
         <h2 class="h2">Vamos destravar seu crescimento?</h2>
         <form id="form" class="form">
@@ -152,22 +150,23 @@
           <textarea name="msg" rows="4" placeholder="Fale sobre seu projeto (nicho, metas, prazos)"></textarea>
           <div class="actions">
             <button class="btn primary" type="submit">Chamar no WhatsApp</button>
-            <a class="btn" href="#planos">Ver planos</a>
+            <a class="btn ghost" href="#planos">Ver planos</a>
           </div>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="ftr">
-    <div class="wrap"><p>© <span id="year"></span> Erick Garcia • Todos os direitos reservados.</p></div>
+  <footer class="ftr" role="contentinfo">
+    <div class="wrap">
+      <p>© <span id="year"></span> Erick Garcia • Todos os direitos reservados.</p>
+    </div>
   </footer>
 
-  <!-- STICKY CTA (entra só depois do herói) -->
-  <div class="sticky">
-    <a class="btn primary" href="https://wa.me/5543988632851?text=Quero%20crescer%20com%20conte%C3%BAdo">Falar no WhatsApp</a>
-    <a class="btn" href="#planos">Planos</a>
+  <!-- STICKY flutuante (entra só depois do herói) -->
+  <div class="sticky-fab" aria-label="Ações rápidas">
+    <a class="btn primary" href="https://wa.me/5543988632851?text=Quero%20crescer%20com%20conte%C3%BAdo">WhatsApp</a>
+    <a class="btn ghost" href="#planos">Planos</a>
   </div>
 
   <script src="script.js"></script>
