@@ -1,7 +1,7 @@
-// util curto
+// atalho
 const $ = (s, r=document) => r.querySelector(s);
 
-// ano
+// ano no rodapé
 (() => { const y = $('#year'); if (y) y.textContent = new Date().getFullYear(); })();
 
 // menu mobile
@@ -19,18 +19,18 @@ const $ = (s, r=document) => r.querySelector(s);
   }, {passive:true}));
 })();
 
-// sticky CTA: aparece só quando sair do herói (melhor UX no iPhone)
+// FAB: só aparece quando sair do herói (evita poluição no topo)
 (() => {
-  const sticky = document.querySelector('.sticky');
+  const fab = document.querySelector('.sticky-fab');
   const hero = document.getElementById('inicio');
-  if (!sticky || !hero || !('IntersectionObserver' in window)) return;
+  if (!fab || !hero || !('IntersectionObserver' in window)) return;
   const io = new IntersectionObserver(([entry]) => {
-    sticky.style.display = entry.isIntersecting ? 'none' : 'flex';
-  }, { threshold: 0.15 });
+    fab.style.display = entry.isIntersecting ? 'none' : 'flex';
+  }, {threshold: 0.12});
   io.observe(hero);
 })();
 
-// form -> WhatsApp com mensagem pronta
+// formulário -> WhatsApp com mensagem pronta
 (() => {
   const form = $('#form'); if(!form) return;
   form.addEventListener('submit', (e)=>{
