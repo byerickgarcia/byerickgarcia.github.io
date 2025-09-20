@@ -31,7 +31,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;color-scheme:dark light}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-img{display:block;max-width:100%;height:auto} /* <- evita imagens achatadas */
+img{display:block;max-width:100%;height:auto} /* evita imagens achatadas */
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:10px}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -59,19 +59,21 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,.7);backdrop-fi
 .actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem}
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.85rem 1.05rem;border-radius:12px;border:1px solid #2a2a2a;background:#151515;white-space:nowrap}
 .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;color:#0b0b0b;font-weight:800}
-figure.hero-pic{margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3} /* espaço reservado estável */
+/* >>> Foto do hero SEM corte */
+figure.hero-pic{margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#0f0f0f}
+.hero-pic img{width:100%;height:auto;object-fit:contain}
 
 /* Grids */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(.9rem,2.2vw,1.25rem)}
 .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
 .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
-.kpi b{font-size:clamp(1.4rem,3vw,1.8rem)}
+.kpi b{font-size:clamp(1.2rem,3vw,1.6rem)}
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
 .gallery figure{margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .gallery figcaption{padding:.6rem .8rem;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
-.plan{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
+.plan{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem;display:flex;flex-direction:column;gap:.5rem}
 .plan.featured{box-shadow:var(--shadow);border-color:var(--accent)}
 .plan ul{margin:.4rem 0 0 1.1rem}
 .faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem}
@@ -84,7 +86,7 @@ footer{border-top:1px solid var(--line);text-align:center}
 
 /* Cookie + Sticky */
 .cookie{position:fixed;left:1rem;right:1rem;
-  bottom:calc(env(safe-area-inset-bottom) + 76px);  /* sobe acima da sticky */
+  bottom:calc(env(safe-area-inset-bottom) + 76px);
   background:var(--panel);border:1px solid var(--line);border-radius:12px;
   padding:1rem;display:flex;align-items:center;justify-content:space-between;gap:.9rem;
   z-index:1000; pointer-events:auto}
@@ -138,10 +140,9 @@ footer{border-top:1px solid var(--line);text-align:center}
         <a class="btn primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20vim%20pelo%20site%20e%20quero%20crescer%20com%20shorts" rel="noopener">Falar no WhatsApp</a>
         <a class="btn" href="#planos">Ver planos</a>
       </div>
-      <p class="muted" style="margin-top:.5rem">Portfólio: @byerickgarcia • @ogarciafotografo • @anotafrase</p>
     </div>
     <figure class="hero-pic" aria-label="Foto principal">
-      <img src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Erick Garcia em foto de perfil" fetchpriority="high" decoding="async" width="800" height="600" style="object-fit:cover">
+      <img src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Erick Garcia em foto de perfil" fetchpriority="high" decoding="async">
     </figure>
   </section>
 
@@ -184,39 +185,46 @@ footer{border-top:1px solid var(--line);text-align:center}
     </div>
   </section>
 
-  <!-- PLANOS -->
+  <!-- PLANOS — NOVOS -->
   <section id="planos" class="wrap section" aria-label="Planos e entregáveis">
-    <h2 class="h2">Como eu entro no seu crescimento</h2>
+    <h2 class="h2">Planos</h2>
     <div class="plans" role="list">
       <article class="plan" role="listitem">
-        <h3 class="h3">Start</h3>
+        <h3 class="h3">Fotografia</h3>
         <ul>
-          <li>Diagnóstico + estratégia inicial</li>
-          <li>4 shorts/semana (roteiro + edição)</li>
-          <li>Calendário e pautas mensais</li>
+          <li>Retratos, eventos e produto</li>
+          <li>Direção de cena e iluminação</li>
+          <li>Edição e entrega otimizada para redes</li>
         </ul>
-        <p class="muted">Para validar narrativa e ganhar tração.</p>
+        <a class="btn" href="#contato">Quero este</a>
+      </article>
+      <article class="plan" role="listitem">
+        <h3 class="h3">Videomaker</h3>
+        <ul>
+          <li>Roteiro + captação + edição</li>
+          <li>Talking-head e B-roll</li>
+          <li>Miniaturas e versões para Reels/TikTok/Shorts</li>
+        </ul>
+        <a class="btn" href="#contato">Quero este</a>
+      </article>
+      <article class="plan" role="listitem">
+        <h3 class="h3">Social Media</h3>
+        <ul>
+          <li>Calendário editorial e pauta</li>
+          <li>Copy, postagem e gestão de comentários</li>
+          <li>Relatórios mensais</li>
+        </ul>
         <a class="btn" href="#contato">Quero este</a>
       </article>
       <article class="plan featured" role="listitem" aria-label="Plano recomendado">
-        <h3 class="h3">Growth</h3>
+        <h3 class="h3">Social Ninja</h3>
+        <p class="muted">Pacote completo: Social Media + Fotógrafo + Videomaker.</p>
         <ul>
-          <li>7 shorts/semana</li>
-          <li>1 vídeo longo/semana</li>
-          <li>Testes A/B (gancho e miniatura)</li>
+          <li>Planejamento 360º e execução</li>
+          <li>Estúdio móvel + captação em lote</li>
+          <li>Testes A/B e otimizações contínuas</li>
         </ul>
-        <p class="muted">Para acelerar autoridade e gerar demanda.</p>
         <a class="btn primary" href="#contato">Plano recomendado</a>
-      </article>
-      <article class="plan" role="listitem">
-        <h3 class="h3">Pro</h3>
-        <ul>
-          <li>8–12 shorts/semana + UGC</li>
-          <li>Campanhas e criativos de performance</li>
-          <li>Relatórios, insights e consultoria</li>
-        </ul>
-        <p class="muted">Para escala com previsibilidade.</p>
-        <a class="btn" href="#contato">Falar agora</a>
       </article>
     </div>
   </section>
@@ -235,7 +243,6 @@ footer{border-top:1px solid var(--line);text-align:center}
         <button class="btn primary" type="submit">Chamar no WhatsApp</button>
         <a class="btn" href="https://instagram.com/byerickgarcia" target="_blank" rel="noopener">Instagram</a>
       </div>
-      <p class="muted">Perfis: <a href="https://instagram.com/ogarciafotografo" target="_blank" rel="noopener">@ogarciafotografo</a> • <a href="https://instagram.com/anotafrase" target="_blank" rel="noopener">@anotafrase</a></p>
     </form>
   </section>
 </main>
@@ -254,14 +261,14 @@ footer{border-top:1px solid var(--line);text-align:center}
 <!-- Cookie / LGPD -->
 <div class="cookie" id="cookie" hidden role="dialog" aria-live="polite" aria-label="Consentimento de cookies">
   <span>Usamos cookies para melhorar sua experiência. <a href="#" style="text-decoration:underline">Saiba mais</a></span>
-  <button id="accept">Aceitar</button>
+  <button type="button" id="accept">Aceitar</button>
 </div>
 
 <script>
 // Ano
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Mobile nav acessível
+// Mobile nav
 (function(){
   const btn = document.getElementById('navToggle');
   const menu = document.getElementById('menu');
@@ -278,23 +285,32 @@ document.getElementById('year').textContent = new Date().getFullYear();
   }));
 })();
 
-// LGPD-lite (agora com prioridade visual e cliques garantidos)
+// Cookie: localStorage + cookie fallback + sessionStorage
 (function(){
-  const KEY='eg_consent', el=document.getElementById('cookie');
-  if(!localStorage.getItem(KEY)){
-    el.hidden=false;
-    document.getElementById('accept').onclick=()=>{
-      localStorage.setItem(KEY,'1');
-      el.hidden=true;
-    };
+  const KEY='eg_consent';
+  const bar=document.getElementById('cookie');
+  const ok=document.getElementById('accept');
+
+  function hasConsent(){
+    try {
+      return localStorage.getItem(KEY)==='1' || document.cookie.includes(KEY+'=1') || sessionStorage.getItem(KEY)==='1';
+    } catch(e){ return false; }
+  }
+  function giveConsent(){
+    try { localStorage.setItem(KEY,'1'); } catch(e){}
+    try { document.cookie=KEY+'=1;path=/;max-age='+(60*60*24*365); } catch(e){}
+    try { sessionStorage.setItem(KEY,'1'); } catch(e){}
+    bar.hidden=true;
+  }
+
+  if(!hasConsent()){
+    bar.hidden=false;
+    // delegação garante clique mesmo se algo mudar no DOM
+    bar.addEventListener('click', (ev)=>{
+      if(ev.target && ev.target.id==='accept'){ giveConsent(); }
+    }, {passive:true});
   }
 })();
-
-// DataLayer simples
-window.dataLayer = window.dataLayer || [];
-document.querySelectorAll('.btn,[data-cta]').forEach(b=>{
-  b.addEventListener('click',()=>dataLayer.push({event:'cta_click',id:b.textContent.trim(),page:location.pathname}));
-});
 </script>
 </body>
 </html>
