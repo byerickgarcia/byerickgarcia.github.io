@@ -1,175 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Erick Garcia — Suite MAX (Heavy)</title>
-  <meta name="description" content="Versão MAX: site robusto, visual carregado, animações, parallax, vídeo e muitos componentes.">
-  <link rel="canonical" href="https://byerickgarcia.github.io/">
+  <title>Erick Garcia — Conteúdo que vira clientes</title>
+  <meta name="description" content="Fotografia, videomaker e social media. Método prático para transformar vídeos curtos em autoridade e oportunidades reais. Ibiporã & Londrina.">
   <meta name="theme-color" content="#0b0b0b">
-  <meta name="color-scheme" content="dark">
-
-  <!-- OG -->
-  <meta property="og:title" content="Erick Garcia — Suite MAX (Heavy)">
-  <meta property="og:description" content="Site com muitos efeitos, animações e seções.">
-  <meta property="og:image" content="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png">
-  <meta property="og:type" content="website">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="color-scheme" content="dark light">
+  <link rel="canonical" href="https://byerickgarcia.github.io/">
+  <!-- fontes opcionais: comente se quiser ainda mais leve -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="theme-dark">
-  <!-- Cookie -->
-  <div id="cookie" class="cookie-banner" role="dialog" aria-live="polite">
-    <p>Usamos cookies para melhorar sua experiência. <a href="#" class="link">Saiba mais</a></p>
-    <button id="cookie-accept" class="btn btn-primary" type="button">Aceitar</button>
-  </div>
-
-  <!-- Sticky CTA -->
-  <div id="sticky" class="sticky-cta">
-    <a class="btn btn-primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20vim%20pelo%20site%20MAX">Falar no WhatsApp</a>
-    <a class="btn btn-ghost" href="#planos">Planos</a>
-  </div>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
   <!-- Header -->
-  <header class="header glass-blur">
+  <header class="header" role="banner">
     <div class="wrap nav">
-      <a class="logo" href="#inicio"><span class="badge">EG</span> Erick Garcia</a>
+      <a class="brand" href="#inicio" aria-label="Início"><span class="badge">EG</span><span class="brand-name">Erick Garcia</span></a>
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
       <nav>
-        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
-        <ul id="menu" class="menu">
-          <li><a href="#beneficios">Benefícios</a></li>
-          <li><a href="#resultados">Resultados</a></li>
-          <li><a href="#planos">Planos</a></li>
-          <li><a href="#contato">Contato</a></li>
+        <ul id="menu" class="menu" role="menubar">
+          <li role="none"><a role="menuitem" href="#sobre">Sobre</a></li>
+          <li role="none"><a role="menuitem" href="#metodo">Método</a></li>
+          <li role="none"><a role="menuitem" href="#resultados">Resultados</a></li>
+          <li role="none"><a role="menuitem" href="#planos">Planos</a></li>
+          <li role="none"><a role="menuitem" href="#contato">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="inicio" class="hero section">
-    <canvas id="particles"></canvas>
-    <video class="hero-video" autoplay muted loop playsinline preload="auto"
-      poster="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png">
-      <source src="https://cdn.coverr.co/videos/coverr-stars-time-lapse-4922/1080p.mp4" type="video/mp4">
-    </video>
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="kicker">Ibiporã & Londrina • PT-BR</p>
-        <h1 class="display">Shorts que viram <span class="grad">clientes</span></h1>
-        <p class="lead">Estratégia, roteiro, gravação e edição — formato talking-head em cenário fixo. Identidade visual forte, ritmo certo e CTA que gera oportunidade.</p>
-        <div class="badges">
-          <span class="chip">1 vídeo longo/semana</span>
-          <span class="chip">4–7 shorts/semana</span>
-          <span class="chip">Thumbs 1–3 palavras</span>
-          <span class="chip">Foco em autoridade</span>
+  <main id="conteudo">
+    <!-- HERO -->
+    <section id="inicio" class="section hero" aria-label="Destaque">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Ibiporã & Londrina • PT-BR</p>
+          <h1 class="display">Shorts que viram <span class="grad">clientes</span></h1>
+          <p class="lead">
+            Estratégia, roteiro, gravação e edição — formato talking-head em cenário fixo.
+            Identidade visual forte, ritmo certo e CTA que gera oportunidade.
+          </p>
+          <ul class="chips">
+            <li>1 vídeo longo/semana</li>
+            <li>4–7 shorts/semana</li>
+            <li>Thumbs 1–3 palavras</li>
+            <li>Foco em autoridade</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20quero%20come%C3%A7ar!">Falar no WhatsApp</a>
+            <a class="btn" href="#planos">Ver planos</a>
+          </div>
         </div>
-        <div class="cta-row">
-          <a class="btn btn-primary btn-lg" href="https://wa.me/5543988632851?text=Oi%20Erick,%20quero%20a%20Suite%20MAX">Falar no WhatsApp</a>
-          <a class="btn btn-ghost btn-lg" href="#planos">Ver planos</a>
-        </div>
-      </div>
-      <figure class="hero-figure">
-        <img class="portrait" src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Foto de perfil de Erick Garcia">
-      </figure>
-    </div>
-    <div class="scroll-down">▼ role</div>
-  </section>
-
-  <!-- Benefícios -->
-  <section id="beneficios" class="section section-dark parallax">
-    <div class="wrap">
-      <h2 class="section-title">Valor que você percebe, resultado que você mede</h2>
-      <div class="grid-3 cards">
-        <article class="card card-neo">
-          <h3>Narrativa que diferencia</h3>
-          <p>Copy de alto impacto: Gancho → Desenvolvimento → Payoff. Cada vídeo avança a história da sua marca.</p>
-        </article>
-        <article class="card card-neo">
-          <h3>Consistência que traciona</h3>
-          <p>Calendário e rotina de gravação. Alcance com direção — não volume por volume.</p>
-        </article>
-        <article class="card card-neo">
-          <h3>Estética que dá clique</h3>
-          <p>Padronização visual, leitura instantânea e miniaturas cirúrgicas.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resultados -->
-  <section id="resultados" class="section">
-    <div class="wrap">
-      <h2 class="section-title">Crescimento comprovado</h2>
-      <div class="grid-2 kpis">
-        <div class="kpi">
-          <div class="muted">TikTok</div>
-          <div class="big">Comecei com 4 mil seguidores</div>
-        </div>
-        <div class="kpi">
-          <div class="muted">Instagram</div>
-          <div class="big">Comecei com 56 mil seguidores</div>
-        </div>
-      </div>
-      <div class="gallery grid-2">
-        <figure class="shot">
-          <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Prints do Instagram">
-        </figure>
-        <figure class="shot">
-          <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Prints do TikTok">
+        <figure class="hero-media" aria-label="Foto de perfil">
+          <img src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Erick Garcia" width="900" height="900" loading="eager" decoding="async">
         </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Planos -->
-  <section id="planos" class="section section-dark">
-    <div class="wrap">
-      <h2 class="section-title">Planos</h2>
-      <div class="grid-4 plans">
-        <article class="plan">
-          <h3>Fotografia</h3>
-          <ul><li>Retratos, eventos e produto</li></ul>
-        </article>
-        <article class="plan">
-          <h3>Videomaker</h3>
-          <ul><li>Roteiro + captação + edição</li></ul>
-        </article>
-        <article class="plan">
-          <h3>Social Media</h3>
-          <ul><li>Calendário, copy e gestão</li></ul>
-        </article>
-        <article class="plan featured">
-          <h3>Social Ninja</h3>
-          <p class="muted">Pacote completo: Social Media + Fotógrafo + Videomaker.</p>
-        </article>
+    <!-- SOBRE -->
+    <section id="sobre" class="section dark" aria-label="Sobre mim">
+      <div class="wrap grid-2">
+        <div>
+          <h2 class="h2">Quem é Erick Garcia</h2>
+          <p class="lead">
+            Criador, fotógrafo e videomaker. Eu ajudo marcas e profissionais a transformar vídeo curto em
+            <strong>autoridade</strong>, <strong>procura orgânica</strong> e <strong>oportunidades reais</strong>.
+          </p>
+          <ul class="list">
+            <li><strong>Visão de estúdio:</strong> cenário fixo, luz consistente e identidade que vira assinatura.</li>
+            <li><strong>Storyselling:</strong> gancho → narrativa → payoff com CTA que convida, não empurra.</li>
+            <li><strong>Operação enxuta:</strong> captação em lote, B-roll e áudio limpo.</li>
+            <li><strong>Métrica que importa:</strong> retenção e salvamentos acima de vaidade de views.</li>
+          </ul>
+          <p class="muted">
+            Comecei o <strong>TikTok</strong> com 4 mil seguidores e o <strong>Instagram</strong> com 56 mil.
+            O resto veio de método e consistência.
+          </p>
+        </div>
+        <figure class="card photo">
+          <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Painel de métricas do Instagram" loading="lazy" decoding="async">
+        </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contato -->
-  <section id="contato" class="section section-dark">
-    <div class="wrap">
-      <h2 class="section-title">Vamos destravar seu crescimento?</h2>
-      <form id="form" class="form">
-        <input name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu e-mail" required>
-        <textarea name="msg" rows="4" placeholder="Fale sobre seu projeto"></textarea>
-        <button class="btn btn-primary" type="submit">Chamar no WhatsApp</button>
-      </form>
-    </div>
-  </section>
+    <!-- MÉTODO -->
+    <section id="metodo" class="section" aria-label="Método">
+      <div class="wrap">
+        <h2 class="h2">Meu método (do briefing ao resultado)</h2>
+        <div class="grid-5 steps">
+          <article class="card"><h3>1) Diagnóstico</h3><p>Objetivo, persona, linguagem e oportunidades.</p></article>
+          <article class="card"><h3>2) Roteiro</h3><p>Ganchos testáveis, estrutura clara e payoff.</p></article>
+          <article class="card"><h3>3) Produção</h3><p>Gravação em lote, direção de cena e B-roll.</p></article>
+          <article class="card"><h3>4) Edição & Identidade</h3><p>Ritmo, legendas dinâmicas e miniaturas curtas.</p></article>
+          <article class="card"><h3>5) Publicação & Insights</h3><p>Calendário, distribuição e leitura de métricas.</p></article>
+        </div>
+      </div>
+    </section>
 
-  <footer class="footer">
+    <!-- RESULTADOS -->
+    <section id="resultados" class="section dark" aria-label="Resultados">
+      <div class="wrap">
+        <h2 class="h2">Crescimento comprovado</h2>
+        <div class="grid-2 kpis">
+          <div class="kpi card"><div class="muted">TikTok</div><b>Comecei com 4 mil seguidores</b><p class="muted">Escala com vídeos curtos de alto apelo.</p></div>
+          <div class="kpi card"><div class="muted">Instagram</div><b>Comecei com 56 mil seguidores</b><p class="muted">Subida constante com rotina e narrativa.</p></div>
+        </div>
+        <div class="grid-2 gallery">
+          <figure class="card">
+            <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Conjunto de prints do Instagram" loading="lazy">
+            <figcaption>Instagram — início em 56 mil (print real).</figcaption>
+          </figure>
+          <figure class="card">
+            <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Conjunto de prints do TikTok" loading="lazy">
+            <figcaption>TikTok — início em 4 mil (print real).</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section id="planos" class="section" aria-label="Planos">
+      <div class="wrap">
+        <h2 class="h2">Planos</h2>
+        <div class="grid-4 plans">
+          <article class="card plan">
+            <h3>Fotografia</h3>
+            <ul>
+              <li>Retratos, eventos e produto</li>
+              <li>Direção de cena e iluminação</li>
+              <li>Edição pronta para redes</li>
+            </ul>
+            <a class="btn" href="#contato">Quero este</a>
+          </article>
+          <article class="card plan">
+            <h3>Videomaker</h3>
+            <ul>
+              <li>Roteiro + captação + edição</li>
+              <li>Talking-head e B-roll</li>
+              <li>Versões para Reels/TikTok/Shorts</li>
+            </ul>
+            <a class="btn" href="#contato">Quero este</a>
+          </article>
+          <article class="card plan">
+            <h3>Social Media</h3>
+            <ul>
+              <li>Calendário editorial e pauta</li>
+              <li>Copy, postagem e gestão</li>
+              <li>Relatórios mensais</li>
+            </ul>
+            <a class="btn" href="#contato">Quero este</a>
+          </article>
+          <article class="card plan featured" aria-label="Plano recomendado">
+            <h3>Social Ninja</h3>
+            <p class="muted">Pacote completo: Social Media + Fotógrafo + Videomaker.</p>
+            <ul>
+              <li>Planejamento 360º e execução</li>
+              <li>Estúdio móvel + captação em lote</li>
+              <li>Testes A/B e otimizações</li>
+            </ul>
+            <a class="btn primary" href="#contato">Plano recomendado</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section dark" aria-label="Contato">
+      <div class="wrap">
+        <h2 class="h2">Vamos destravar seu crescimento?</h2>
+        <form id="form" class="form">
+          <input name="nome" placeholder="Seu nome" autocomplete="name" required>
+          <input type="email" name="email" placeholder="Seu e-mail" autocomplete="email" required>
+          <textarea name="msg" rows="4" placeholder="Fale sobre seu projeto (nicho, metas, prazos)"></textarea>
+          <div class="actions">
+            <button class="btn primary" type="submit">Chamar no WhatsApp</button>
+            <a class="btn" href="#planos">Ver planos</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
     <div class="wrap">
       <p>© <span id="year"></span> Erick Garcia — Todos os direitos reservados.</p>
+      <p class="muted"><a href="https://byerickgarcia.github.io/">byerickgarcia.github.io</a></p>
     </div>
   </footer>
+
+  <!-- Sticky CTA (mobile) -->
+  <div class="sticky" role="region" aria-label="Ação rápida">
+    <a class="btn primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20quero%20come%C3%A7ar!" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <a class="btn" href="#planos">Planos</a>
+  </div>
+
+  <!-- Cookie -->
+  <div id="cookie" class="cookie" hidden role="dialog" aria-live="polite">
+    <span>Usamos cookies para melhorar sua experiência. <a href="#" class="link">Saiba mais</a></span>
+    <button id="cookieOk" type="button" class="btn primary small">Aceitar</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
