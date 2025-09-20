@@ -115,3 +115,21 @@ a{color:inherit;text-decoration:none} a:visited{color:inherit}
   border-radius:8px;
   margin-left:.3rem;
 }
+/* ==== HOTFIX iOS/Safari sticky + respiro ==== */
+
+/* a sticky fica escondida por padrão; JS controla a exibição */
+.sticky{ display:none; position:fixed; left:0; right:0;
+  bottom:calc(env(safe-area-inset-bottom) + 8px);
+  background:#0B0F14E6; border-top:1px solid #1C232C;
+  padding:.7rem clamp(1rem,4vw,1.2rem);
+  gap:.6rem; justify-content:center; backdrop-filter:blur(10px); z-index:900;
+}
+
+/* reserva de espaço para quando a sticky aparecer em telas pequenas */
+@media (max-width: 960px){
+  body{ padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
+}
+
+/* mais respiro entre os CTAs do herói e a imagem */
+.hero-copy .actions{ margin-bottom: .8rem; }
+.hero-media{ margin-top: .3rem; }
