@@ -20,9 +20,10 @@
       <a class="brand" href="#sobre">Erick Garcia</a>
       <button id="menuToggle" class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
       <nav id="menu" class="menu" role="navigation">
+        <!-- ordem do menu segue a ordem da página -->
         <a href="#sobre">Sobre</a>
-        <a href="#planos">Planos</a>
         <a href="#prova">Prova</a>
+        <a href="#planos">Planos</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -30,7 +31,7 @@
 
   <main id="conteudo">
 
-    <!-- SOBRE PRIMEIRO -->
+    <!-- 1) SOBRE PRIMEIRO -->
     <section id="sobre" class="sec hero">
       <div class="wrap hero-grid">
         <figure class="hero-media" aria-label="Erick Garcia">
@@ -57,7 +58,34 @@
       </div>
     </section>
 
-    <!-- COMO FUNCIONA -->
+    <!-- 2) PROVA LOGO APÓS O SOBRE -->
+<section id="prova" class="sec soft" aria-label="Resultados reais">
+  <div class="wrap">
+    <h2 class="h2">Resultados reais</h2>
+    <p class="muted small">
+      Caso real de crescimento em redes sociais. Contrato <strong>mês a mês</strong> durante 
+      <strong>4 meses e alguns dias</strong>. Resultado conquistado apenas com produção constante de foto e vídeo.
+    </p>
+
+    <div class="grid-2">
+      <figure class="card">
+        <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Crescimento no Instagram" loading="lazy">
+        <figcaption class="muted small">
+          Instagram. começamos com <strong>56 mil</strong> seguidores e em pouco mais de 4 meses chegamos a <strong>113 mil+</strong>.
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Crescimento no TikTok" loading="lazy">
+        <figcaption class="muted small">
+          TikTok. começamos com <strong>4 mil</strong> seguidores e em pouco mais de 4 meses alcançamos <strong>82 mil+</strong>.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+    <!-- 3) COMO FUNCIONA -->
     <section id="modelo" class="sec soft" aria-label="Como funciona">
       <div class="wrap grid-2">
         <div>
@@ -70,30 +98,27 @@
           </ul>
         </div>
         <figure class="card">
-          <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Resultados reais" loading="lazy">
+          <img src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Erick Garcia em estúdio" loading="lazy">
         </figure>
       </div>
     </section>
 
-    <!-- PLANOS -->
+    <!-- 4) PLANOS (sem prints abaixo para evitar repetição) -->
     <section id="planos" class="sec">
       <div class="wrap">
         <h2 class="h2">Planos com vagas limitadas</h2>
         <p class="muted small">Foco total em redes sociais para empresa restaurante profissional e criador. Quando o contador zera o botão vira lista de espera</p>
 
         <div class="plans-grid">
-
+          <!-- 6 planos (iguais aos que você já aplicou) -->
           <article class="card plan" data-plan="Pulse Start" data-price="2500" data-slots="2">
             <header class="plan-hd"><h3>Pulse Start</h3><span class="pill">Essencial</span></header>
             <p class="price">R$ 2.500 por mês</p>
             <p class="micro">Para começar com qualidade</p>
             <ul class="ticks">
-              <li>1 sessão no mês</li>
-              <li>4 vídeos curtos prontos</li>
-              <li>10 fotos prontas</li>
-              <li>Título e descrição simples</li>
+              <li>1 sessão no mês</li><li>4 vídeos curtos prontos</li><li>10 fotos prontas</li><li>Título e descrição simples</li>
             </ul>
-            <div class="slots">Vagas: <b class="slots-num">0</b></div>
+            <div class="slots">Vagas. <b class="slots-num">0</b></div>
             <div class="act"><a class="btn primary cta" href="#">Garantir vaga</a></div>
           </article>
 
@@ -102,12 +127,9 @@
             <p class="price">R$ 3.600 por mês</p>
             <p class="micro">Presença constante com segurança</p>
             <ul class="ticks">
-              <li>1 a 2 sessões no mês</li>
-              <li>6 vídeos curtos prontos</li>
-              <li>15 fotos prontas</li>
-              <li>Sugestão de dia para postar</li>
+              <li>1 a 2 sessões no mês</li><li>6 vídeos curtos prontos</li><li>15 fotos prontas</li><li>Sugestão de dia para postar</li>
             </ul>
-            <div class="slots">Vagas: <b class="slots-num">0</b></div>
+            <div class="slots">Vagas. <b class="slots-num">0</b></div>
             <div class="act"><a class="btn primary cta" href="#">Garantir vaga</a></div>
           </article>
 
@@ -116,12 +138,9 @@
             <p class="price">R$ 4.800 por mês</p>
             <p class="micro">Para virar referência no seu nicho</p>
             <ul class="ticks">
-              <li>2 sessões no mês</li>
-              <li>8 vídeos curtos prontos</li>
-              <li>20 fotos prontas</li>
-              <li>Roteiro simples por tema</li>
+              <li>2 sessões no mês</li><li>8 vídeos curtos prontos</li><li>20 fotos prontas</li><li>Roteiro simples por tema</li>
             </ul>
-            <div class="slots">Vagas: <b class="slots-num">0</b></div>
+            <div class="slots">Vagas. <b class="slots-num">0</b></div>
             <div class="act"><a class="btn primary cta" href="#">Garantir vaga</a></div>
           </article>
 
@@ -130,12 +149,9 @@
             <p class="price">R$ 5.800 por mês</p>
             <p class="micro">Mais teste e mais material por mês</p>
             <ul class="ticks">
-              <li>2 sessões no mês</li>
-              <li>10 vídeos curtos prontos</li>
-              <li>25 fotos prontas</li>
-              <li>Dois ganchos por vídeo para testar</li>
+              <li>2 sessões no mês</li><li>10 vídeos curtos prontos</li><li>25 fotos prontas</li><li>Dois ganchos por vídeo para testar</li>
             </ul>
-            <div class="slots">Vagas: <b class="slots-num">0</b></div>
+            <div class="slots">Vagas. <b class="slots-num">0</b></div>
             <div class="act"><a class="btn primary cta" href="#">Garantir vaga</a></div>
           </article>
 
@@ -144,12 +160,9 @@
             <p class="price">R$ 7.500 por mês</p>
             <p class="micro">Atendimento rápido e fila zero</p>
             <ul class="ticks">
-              <li>Até 3 sessões no mês</li>
-              <li>12 vídeos curtos prontos</li>
-              <li>30 fotos prontas</li>
-              <li>Ajustes sob demanda</li>
+              <li>Até 3 sessões no mês</li><li>12 vídeos curtos prontos</li><li>30 fotos prontas</li><li>Ajustes sob demanda</li>
             </ul>
-            <div class="slots">Vagas: <b class="slots-num">0</b></div>
+            <div class="slots">Vagas. <b class="slots-num">0</b></div>
             <div class="act"><a class="btn primary cta" href="#">Garantir vaga</a></div>
           </article>
 
@@ -158,20 +171,16 @@
             <p class="price">R$ 9.800 por mês</p>
             <p class="micro">Camada máxima com foco total</p>
             <ul class="ticks">
-              <li>3 sessões ou mais no mês</li>
-              <li>16 vídeos curtos prontos</li>
-              <li>40 fotos prontas</li>
-              <li>Direção criativa completa</li>
+              <li>3 sessões ou mais no mês</li><li>16 vídeos curtos prontos</li><li>40 fotos prontas</li><li>Direção criativa completa</li>
             </ul>
-            <div class="slots">Vagas: <b class="slots-num">0</b></div>
+            <div class="slots">Vagas. <b class="slots-num">0</b></div>
             <div class="act"><a class="btn primary cta" href="#">Garantir vaga</a></div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- INDICADOR DE INTERESSE -->
+    <!-- 5) INDICADOR DE INTERESSE -->
     <section class="sec demand" aria-label="Interesse agora">
       <div class="wrap demand-wrap">
         <div class="demand-dot" aria-hidden="true"></div>
@@ -182,21 +191,7 @@
       </div>
     </section>
 
-    <!-- PROVA -->
-    <section id="prova" class="sec soft">
-      <div class="wrap grid-2">
-        <figure class="card">
-          <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Conjunto Instagram" loading="lazy">
-          <figcaption class="muted small">Instagram. comecei com 56 mil seguidores</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Conjunto TikTok" loading="lazy">
-          <figcaption class="muted small">TikTok. comecei com 4 mil seguidores</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
+    <!-- 6) CONTATO -->
     <section id="contato" class="sec">
       <div class="wrap">
         <h2 class="h2">Fechamos agora</h2>
@@ -228,43 +223,20 @@
       <p class="muted small">Preencha e envio a mensagem pronta no WhatsApp</p>
 
       <form id="leadForm" class="lead-form">
-        <label>
-          <span>Seu nome</span>
-          <input id="leadNome" name="nome" required autocomplete="name" placeholder="Seu nome">
-        </label>
-
-        <label>
-          <span>Empresa ou perfil</span>
-          <input id="leadEmpresa" name="empresa" autocomplete="organization" placeholder="Nome da empresa ou @perfil">
-        </label>
-
+        <label><span>Seu nome</span><input id="leadNome" name="nome" required autocomplete="name" placeholder="Seu nome"></label>
+        <label><span>Empresa ou perfil</span><input id="leadEmpresa" name="empresa" autocomplete="organization" placeholder="Nome da empresa ou @perfil"></label>
         <label>
           <span>Plano escolhido</span>
           <select id="leadPlano" name="plano" required>
             <option value="" disabled selected>Selecione</option>
-            <option>Pulse Start</option>
-            <option>Pulse Pro</option>
-            <option>Authority Core</option>
-            <option>Authority Plus</option>
-            <option>Momentum VIP</option>
-            <option>Momentum Elite</option>
+            <option>Pulse Start</option><option>Pulse Pro</option>
+            <option>Authority Core</option><option>Authority Plus</option>
+            <option>Momentum VIP</option><option>Momentum Elite</option>
           </select>
         </label>
-
-        <label>
-          <span>Mensagem opcional</span>
-          <textarea id="leadMsg" name="msg" rows="3" placeholder="Exemplo. nicho. objetivo. prazo"></textarea>
-        </label>
-
-        <label class="check">
-          <input id="leadConsent" type="checkbox" required>
-          <span>Aceito ser contatado pelo WhatsApp para esta proposta</span>
-        </label>
-
-        <div class="actions">
-          <button class="btn primary" type="submit">Ir para o WhatsApp</button>
-          <button class="btn ghost" type="button" id="leadCancel">Cancelar</button>
-        </div>
+        <label><span>Mensagem opcional</span><textarea id="leadMsg" name="msg" rows="3" placeholder="Exemplo. nicho. objetivo. prazo"></textarea></label>
+        <label class="check"><input id="leadConsent" type="checkbox" required><span>Aceito ser contatado pelo WhatsApp para esta proposta</span></label>
+        <div class="actions"><button class="btn primary" type="submit">Ir para o WhatsApp</button><button class="btn ghost" type="button" id="leadCancel">Cancelar</button></div>
       </form>
 
       <p class="muted tiny">Não compartilhamos seus dados. Usamos apenas para contato sobre sua solicitação</p>
