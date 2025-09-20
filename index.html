@@ -1,316 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Erick Garcia — Shorts que viram clientes | byerickgarcia</title>
-<meta name="description" content="Shorts que constroem autoridade e trazem clientes. Estratégia, roteiro, gravação e edição — Ibiporã & Londrina. Prova social real.">
-<link rel="canonical" href="https://byerickgarcia.github.io/">
-<meta name="theme-color" content="#0b0b0b">
-<meta name="color-scheme" content="dark light">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Erick Garcia — Suite MAX (Heavy)</title>
+  <meta name="description" content="Versão MAX: site robusto, visual carregado, animações, parallax, vídeo e muitos componentes.">
+  <link rel="canonical" href="https://byerickgarcia.github.io/">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="color-scheme" content="dark">
 
-<!-- Social -->
-<meta property="og:title" content="Erick Garcia — Criador de Conteúdo">
-<meta property="og:description" content="Vídeos curtos que viram clientes: estratégia, roteiro, gravação e edição.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://byerickgarcia.github.io/">
-<meta property="og:image" content="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png">
-<meta name="twitter:card" content="summary_large_image">
+  <!-- OG -->
+  <meta property="og:title" content="Erick Garcia — Suite MAX (Heavy)">
+  <meta property="og:description" content="Site com muitos efeitos, animações e seções.">
+  <meta property="og:image" content="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png">
+  <meta property="og:type" content="website">
 
-<!-- Perf hints -->
-<link rel="preconnect" href="https://i.ibb.co" crossorigin>
-<link rel="preconnect" href="https://wa.me">
-<link rel="preload" as="image" href="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" fetchpriority="high">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --bg:#0b0b0b; --panel:#111; --line:#1c1c1c; --muted:#bdbdbd; --text:#ededed;
-  --accent:#22c55e; --accent-2:#16a34a; --radius:16px;
-  --gap:clamp(.75rem,2.2vw,1.25rem); --max:1180px; --shadow:0 0 0 2px rgba(34,197,94,.13) inset;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;color-scheme:dark light}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-img{display:block;max-width:100%;height:auto} /* evita imagens achatadas */
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:10px}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-
-.wrap{max-width:var(--max);margin-inline:auto;padding:clamp(1rem,2.5vw,1.5rem)}
-.section{padding-block:clamp(1.5rem,4vw,3rem);content-visibility:auto;contain-intrinsic-size:1px 900px}
-.h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:0}
-.h2{font-size:clamp(1.5rem,3vw,2rem);margin:0 0 .75rem}
-.h3{font-size:clamp(1.1rem,2.2vw,1.25rem);margin:.1rem 0 .25rem}
-.muted{color:var(--muted)}
-.sr-only{position:absolute!important;clip:rect(1px,1px,1px,1px)!important;width:1px;height:1px;overflow:hidden}
-
-/* Header/nav */
-header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{display:flex;align-items:center;gap:.6rem;font-weight:800}
-.logo-badge{background:var(--accent-2);color:#0b0b0b;padding:.18rem .5rem;border-radius:10px}
-.menu{display:flex;gap:.9rem;list-style:none;margin:0;padding:0}
-.toggle{display:none;appearance:none;background:#151515;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:.55rem .7rem}
-
-/* Hero */
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--gap);align-items:center}
-.badges{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0 1rem}
-.badge{border:1px solid var(--line);background:#121212;padding:.45rem .7rem;border-radius:999px;font-size:.92rem}
-.actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem}
-.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.85rem 1.05rem;border-radius:12px;border:1px solid #2a2a2a;background:#151515;white-space:nowrap}
-.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;color:#0b0b0b;font-weight:800}
-/* >>> Foto do hero SEM corte */
-figure.hero-pic{margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#0f0f0f}
-.hero-pic img{width:100%;height:auto;object-fit:contain}
-
-/* Grids */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(.9rem,2.2vw,1.25rem)}
-.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
-.kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
-.kpi b{font-size:clamp(1.2rem,3vw,1.6rem)}
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
-.gallery figure{margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-.gallery figcaption{padding:.6rem .8rem;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
-.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
-.plan{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem;display:flex;flex-direction:column;gap:.5rem}
-.plan.featured{box-shadow:var(--shadow);border-color:var(--accent)}
-.plan ul{margin:.4rem 0 0 1.1rem}
-.faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem}
-.faq details+details{margin-top:.6rem}
-
-/* Form/footer */
-form{display:grid;gap:.7rem;max-width:640px}
-input,textarea{padding:.85rem;border:1px solid #2a2a2a;border-radius:12px;background:#0f0f0f;color:var(--text)}
-footer{border-top:1px solid var(--line);text-align:center}
-
-/* Cookie + Sticky */
-.cookie{position:fixed;left:1rem;right:1rem;
-  bottom:calc(env(safe-area-inset-bottom) + 76px);
-  background:var(--panel);border:1px solid var(--line);border-radius:12px;
-  padding:1rem;display:flex;align-items:center;justify-content:space-between;gap:.9rem;
-  z-index:1000; pointer-events:auto}
-.cookie button{padding:.6rem .9rem;border-radius:10px;border:none;background:var(--accent);color:#0b0b0b;font-weight:800}
-.sticky{position:fixed;inset:auto 0 0 0;background:#0e0e0ee6;border-top:1px solid #1c1c1c;
-  padding:.7rem 1rem;display:none;gap:.6rem;align-items:center;justify-content:center;
-  backdrop-filter:blur(10px);z-index:900}
-.sticky .btn{padding:.75rem 1rem}
-
-/* Responsive */
-@media (max-width: 960px){
-  .hero{grid-template-columns:1fr}
-  .cards,.plans{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr}
-  .menu{display:none}
-  .toggle{display:inline-flex}
-  .sticky{display:flex}
-}
-</style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<a class="sr-only" href="#conteudo">Pular para o conteúdo</a>
+<body class="theme-dark">
+  <!-- Cookie -->
+  <div id="cookie" class="cookie-banner" role="dialog" aria-live="polite">
+    <p>Usamos cookies para melhorar sua experiência. <a href="#" class="link">Saiba mais</a></p>
+    <button id="cookie-accept" class="btn btn-primary" type="button">Aceitar</button>
+  </div>
 
-<header role="banner">
-  <nav class="wrap nav" aria-label="Principal">
-    <a class="logo" href="#inicio" aria-label="Início"><span class="logo-badge">EG</span> Erick Garcia</a>
-    <button class="toggle" id="navToggle" aria-expanded="false" aria-controls="menu">Menu</button>
-    <ul id="menu" class="menu" role="menubar">
-      <li role="none"><a role="menuitem" href="#beneficios">Benefícios</a></li>
-      <li role="none"><a role="menuitem" href="#resultados">Resultados</a></li>
-      <li role="none"><a role="menuitem" href="#planos">Planos</a></li>
-      <li role="none"><a role="menuitem" href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Sticky CTA -->
+  <div id="sticky" class="sticky-cta">
+    <a class="btn btn-primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20vim%20pelo%20site%20MAX">Falar no WhatsApp</a>
+    <a class="btn btn-ghost" href="#planos">Planos</a>
+  </div>
 
-<main id="conteudo">
-  <!-- HERO -->
-  <section id="inicio" class="wrap section hero" aria-label="Destaque">
-    <div>
-      <p class="muted">Ibiporã & Londrina • PT-BR</p>
-      <h1 class="h1">Shorts que viram <span style="background:linear-gradient(135deg,#22c55e,#16a34a);-webkit-background-clip:text;background-clip:text;color:transparent">clientes</span></h1>
-      <p class="muted">Estratégia, roteiro, gravação e edição — formato talking-head em cenário fixo. Identidade visual padronizada, ritmo certo e CTA que gera oportunidade.</p>
-      <div class="badges" aria-label="Diferenciais">
-        <span class="badge">1 vídeo longo/semana</span>
-        <span class="badge">4–7 shorts/semana</span>
-        <span class="badge">Thumbs 1–3 palavras</span>
-        <span class="badge">Foco em autoridade</span>
+  <!-- Header -->
+  <header class="header glass-blur">
+    <div class="wrap nav">
+      <a class="logo" href="#inicio"><span class="badge">EG</span> Erick Garcia</a>
+      <nav>
+        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+        <ul id="menu" class="menu">
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero section">
+    <canvas id="particles"></canvas>
+    <video class="hero-video" autoplay muted loop playsinline preload="auto"
+      poster="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png">
+      <source src="https://cdn.coverr.co/videos/coverr-stars-time-lapse-4922/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Ibiporã & Londrina • PT-BR</p>
+        <h1 class="display">Shorts que viram <span class="grad">clientes</span></h1>
+        <p class="lead">Estratégia, roteiro, gravação e edição — formato talking-head em cenário fixo. Identidade visual forte, ritmo certo e CTA que gera oportunidade.</p>
+        <div class="badges">
+          <span class="chip">1 vídeo longo/semana</span>
+          <span class="chip">4–7 shorts/semana</span>
+          <span class="chip">Thumbs 1–3 palavras</span>
+          <span class="chip">Foco em autoridade</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="https://wa.me/5543988632851?text=Oi%20Erick,%20quero%20a%20Suite%20MAX">Falar no WhatsApp</a>
+          <a class="btn btn-ghost btn-lg" href="#planos">Ver planos</a>
+        </div>
       </div>
-      <div class="actions">
-        <a class="btn primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20vim%20pelo%20site%20e%20quero%20crescer%20com%20shorts" rel="noopener">Falar no WhatsApp</a>
-        <a class="btn" href="#planos">Ver planos</a>
-      </div>
-    </div>
-    <figure class="hero-pic" aria-label="Foto principal">
-      <img src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Erick Garcia em foto de perfil" fetchpriority="high" decoding="async">
-    </figure>
-  </section>
-
-  <!-- BENEFÍCIOS -->
-  <section id="beneficios" class="wrap section" aria-label="Benefícios">
-    <h2 class="h2">Valor acima de tudo: narrativa, consistência e estética</h2>
-    <div class="cards" role="list">
-      <article class="card" role="listitem">
-        <h3 class="h3">Narrativa que diferencia</h3>
-        <p>Copy de alto impacto: Gancho → Desenvolvimento → Payoff. Cada vídeo avança a história da sua marca.</p>
-      </article>
-      <article class="card" role="listitem">
-        <h3 class="h3">Consistência que traciona</h3>
-        <p>Calendário e rotina de gravação. Alcance com direção — não volume por volume.</p>
-      </article>
-      <article class="card" role="listitem">
-        <h3 class="h3">Estética que dá clique</h3>
-        <p>Padronização visual, leitura instantânea e miniaturas cirúrgicas. CTR nasce do contexto + clareza.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- PROVA SOCIAL -->
-  <section id="resultados" class="wrap section" aria-label="Resultados e prova social">
-    <h2 class="h2">Crescimento comprovado</h2>
-    <div class="kpis" aria-label="Indicadores de destaque">
-      <div class="kpi"><div class="muted">TikTok</div><b>Comecei com 4 mil seguidores</b><div class="muted">Escalei via vídeos curtos de alto apelo</div></div>
-      <div class="kpi"><div class="muted">Instagram</div><b>Comecei com 56 mil seguidores</b><div class="muted">Aumento consistente com rotina e narrativa</div></div>
-    </div>
-
-    <div class="gallery" style="margin-top:var(--gap)">
-      <figure>
-        <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Conjunto de prints do Instagram com métricas e crescimento" loading="lazy" decoding="async">
-        <figcaption>Instagram — início em <strong>56 mil</strong> seguidores (print real).</figcaption>
-      </figure>
-      <figure>
-        <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Conjunto de prints do TikTok com alto alcance" loading="lazy" decoding="async">
-        <figcaption>TikTok — início em <strong>4 mil</strong> seguidores (print real).</figcaption>
+      <figure class="hero-figure">
+        <img class="portrait" src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Foto de perfil de Erick Garcia">
       </figure>
     </div>
+    <div class="scroll-down">▼ role</div>
   </section>
 
-  <!-- PLANOS — NOVOS -->
-  <section id="planos" class="wrap section" aria-label="Planos e entregáveis">
-    <h2 class="h2">Planos</h2>
-    <div class="plans" role="list">
-      <article class="plan" role="listitem">
-        <h3 class="h3">Fotografia</h3>
-        <ul>
-          <li>Retratos, eventos e produto</li>
-          <li>Direção de cena e iluminação</li>
-          <li>Edição e entrega otimizada para redes</li>
-        </ul>
-        <a class="btn" href="#contato">Quero este</a>
-      </article>
-      <article class="plan" role="listitem">
-        <h3 class="h3">Videomaker</h3>
-        <ul>
-          <li>Roteiro + captação + edição</li>
-          <li>Talking-head e B-roll</li>
-          <li>Miniaturas e versões para Reels/TikTok/Shorts</li>
-        </ul>
-        <a class="btn" href="#contato">Quero este</a>
-      </article>
-      <article class="plan" role="listitem">
-        <h3 class="h3">Social Media</h3>
-        <ul>
-          <li>Calendário editorial e pauta</li>
-          <li>Copy, postagem e gestão de comentários</li>
-          <li>Relatórios mensais</li>
-        </ul>
-        <a class="btn" href="#contato">Quero este</a>
-      </article>
-      <article class="plan featured" role="listitem" aria-label="Plano recomendado">
-        <h3 class="h3">Social Ninja</h3>
-        <p class="muted">Pacote completo: Social Media + Fotógrafo + Videomaker.</p>
-        <ul>
-          <li>Planejamento 360º e execução</li>
-          <li>Estúdio móvel + captação em lote</li>
-          <li>Testes A/B e otimizações contínuas</li>
-        </ul>
-        <a class="btn primary" href="#contato">Plano recomendado</a>
-      </article>
+  <!-- Benefícios -->
+  <section id="beneficios" class="section section-dark parallax">
+    <div class="wrap">
+      <h2 class="section-title">Valor que você percebe, resultado que você mede</h2>
+      <div class="grid-3 cards">
+        <article class="card card-neo">
+          <h3>Narrativa que diferencia</h3>
+          <p>Copy de alto impacto: Gancho → Desenvolvimento → Payoff. Cada vídeo avança a história da sua marca.</p>
+        </article>
+        <article class="card card-neo">
+          <h3>Consistência que traciona</h3>
+          <p>Calendário e rotina de gravação. Alcance com direção — não volume por volume.</p>
+        </article>
+        <article class="card card-neo">
+          <h3>Estética que dá clique</h3>
+          <p>Padronização visual, leitura instantânea e miniaturas cirúrgicas.</p>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section id="contato" class="wrap section" aria-label="Contato">
-    <h2 class="h2">Vamos destravar seu crescimento?</h2>
-    <form onsubmit="event.preventDefault(); window.open('https://wa.me/5543988632851?text=Oi%20Erick,%20vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20conte%C3%BAdos%20curtos.', '_blank')">
-      <label class="sr-only" for="nome">Seu nome</label>
-      <input id="nome" name="nome" placeholder="Seu nome" required inputmode="text" autocomplete="name">
-      <label class="sr-only" for="email">Seu e-mail</label>
-      <input id="email" name="email" type="email" placeholder="Seu e-mail" required autocomplete="email">
-      <label class="sr-only" for="mensagem">Mensagem</label>
-      <textarea id="mensagem" name="mensagem" rows="4" placeholder="Fale sobre seu projeto (nicho, metas, prazos)"></textarea>
-      <div class="actions">
-        <button class="btn primary" type="submit">Chamar no WhatsApp</button>
-        <a class="btn" href="https://instagram.com/byerickgarcia" target="_blank" rel="noopener">Instagram</a>
+  <!-- Resultados -->
+  <section id="resultados" class="section">
+    <div class="wrap">
+      <h2 class="section-title">Crescimento comprovado</h2>
+      <div class="grid-2 kpis">
+        <div class="kpi">
+          <div class="muted">TikTok</div>
+          <div class="big">Comecei com 4 mil seguidores</div>
+        </div>
+        <div class="kpi">
+          <div class="muted">Instagram</div>
+          <div class="big">Comecei com 56 mil seguidores</div>
+        </div>
       </div>
-    </form>
+      <div class="gallery grid-2">
+        <figure class="shot">
+          <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Prints do Instagram">
+        </figure>
+        <figure class="shot">
+          <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Prints do TikTok">
+        </figure>
+      </div>
+    </div>
   </section>
-</main>
 
-<footer class="wrap section" role="contentinfo" style="padding-block:1.25rem">
-  <p>© <span id="year"></span> Erick Garcia — Todos os direitos reservados.</p>
-  <p class="muted">Site: <a href="https://byerickgarcia.github.io/">byerickgarcia.github.io</a></p>
-</footer>
+  <!-- Planos -->
+  <section id="planos" class="section section-dark">
+    <div class="wrap">
+      <h2 class="section-title">Planos</h2>
+      <div class="grid-4 plans">
+        <article class="plan">
+          <h3>Fotografia</h3>
+          <ul><li>Retratos, eventos e produto</li></ul>
+        </article>
+        <article class="plan">
+          <h3>Videomaker</h3>
+          <ul><li>Roteiro + captação + edição</li></ul>
+        </article>
+        <article class="plan">
+          <h3>Social Media</h3>
+          <ul><li>Calendário, copy e gestão</li></ul>
+        </article>
+        <article class="plan featured">
+          <h3>Social Ninja</h3>
+          <p class="muted">Pacote completo: Social Media + Fotógrafo + Videomaker.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<!-- Sticky CTA (mobile) -->
-<div class="sticky" role="region" aria-label="Ação rápida">
-  <a class="btn primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20quero%20crescer%20com%20shorts" target="_blank" rel="noopener">Falar no WhatsApp</a>
-  <a class="btn" href="#planos">Planos</a>
-</div>
+  <!-- Contato -->
+  <section id="contato" class="section section-dark">
+    <div class="wrap">
+      <h2 class="section-title">Vamos destravar seu crescimento?</h2>
+      <form id="form" class="form">
+        <input name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="msg" rows="4" placeholder="Fale sobre seu projeto"></textarea>
+        <button class="btn btn-primary" type="submit">Chamar no WhatsApp</button>
+      </form>
+    </div>
+  </section>
 
-<!-- Cookie / LGPD -->
-<div class="cookie" id="cookie" hidden role="dialog" aria-live="polite" aria-label="Consentimento de cookies">
-  <span>Usamos cookies para melhorar sua experiência. <a href="#" style="text-decoration:underline">Saiba mais</a></span>
-  <button type="button" id="accept">Aceitar</button>
-</div>
+  <footer class="footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Erick Garcia — Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-<script>
-// Ano
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Mobile nav
-(function(){
-  const btn = document.getElementById('navToggle');
-  const menu = document.getElementById('menu');
-  if(!btn || !menu) return;
-  btn.addEventListener('click', ()=>{
-    const open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!open));
-    menu.style.display = open ? 'none' : 'flex';
-  });
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ 
-    if (window.matchMedia('(max-width: 960px)').matches){
-      btn.setAttribute('aria-expanded','false'); menu.style.display='none';
-    }
-  }));
-})();
-
-// Cookie: localStorage + cookie fallback + sessionStorage
-(function(){
-  const KEY='eg_consent';
-  const bar=document.getElementById('cookie');
-  const ok=document.getElementById('accept');
-
-  function hasConsent(){
-    try {
-      return localStorage.getItem(KEY)==='1' || document.cookie.includes(KEY+'=1') || sessionStorage.getItem(KEY)==='1';
-    } catch(e){ return false; }
-  }
-  function giveConsent(){
-    try { localStorage.setItem(KEY,'1'); } catch(e){}
-    try { document.cookie=KEY+'=1;path=/;max-age='+(60*60*24*365); } catch(e){}
-    try { sessionStorage.setItem(KEY,'1'); } catch(e){}
-    bar.hidden=true;
-  }
-
-  if(!hasConsent()){
-    bar.hidden=false;
-    // delegação garante clique mesmo se algo mudar no DOM
-    bar.addEventListener('click', (ev)=>{
-      if(ev.target && ev.target.id==='accept'){ giveConsent(); }
-    }, {passive:true});
-  }
-})();
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
