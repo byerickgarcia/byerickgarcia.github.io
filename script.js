@@ -4,7 +4,7 @@ const $ = (s, r=document) => r.querySelector(s);
 // ano
 (() => { const y = $('#year'); if (y) y.textContent = new Date().getFullYear(); })();
 
-// menu mobile com fallback robusto
+// menu mobile
 (() => {
   const btn = $('#menuToggle'), menu = $('#menu');
   if (!btn || !menu) return;
@@ -19,7 +19,18 @@ const $ = (s, r=document) => r.querySelector(s);
   }, {passive:true}));
 })();
 
-// formulário -> WhatsApp
+// sticky CTA: aparece só quando sair do herói (melhor UX no iPhone)
+(() => {
+  const sticky = document.querySelector('.sticky');
+  const hero = document.getElementById('inicio');
+  if (!sticky || !hero || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(([entry]) => {
+    sticky.style.display = entry.isIntersecting ? 'none' : 'flex';
+  }, { threshold: 0.15 });
+  io.observe(hero);
+})();
+
+// form -> WhatsApp com mensagem pronta
 (() => {
   const form = $('#form'); if(!form) return;
   form.addEventListener('submit', (e)=>{
