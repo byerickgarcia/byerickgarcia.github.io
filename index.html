@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- ===== META / SEO ===== -->
+  <!-- META / SEO -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Erick Garcia — Shorts que viram clientes | byerickgarcia</title>
-  <meta name="description" content="Shorts que constroem autoridade e trazem clientes. Estratégia, roteiro, gravação e edição — Ibiporã & Londrina. Prova social real e crescimento medido.">
+  <meta name="description" content="Shorts que constroem autoridade e trazem clientes. Estratégia, roteiro, gravação e edição — Ibiporã & Londrina. Prova social real.">
   <link rel="canonical" href="https://byerickgarcia.github.io/">
   <meta name="theme-color" content="#0b0b0b">
   <meta name="color-scheme" content="dark light">
 
-  <!-- ===== SOCIAL ===== -->
+  <!-- SOCIAL -->
   <meta property="og:title" content="Erick Garcia — Criador de Conteúdo">
   <meta property="og:description" content="Vídeos curtos que viram clientes: estratégia, roteiro, gravação e edição.">
   <meta property="og:type" content="website">
@@ -18,47 +18,47 @@
   <meta property="og:image" content="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ===== PERFORMANCE HINTS ===== -->
+  <!-- PERFORMANCE HINTS -->
   <link rel="preconnect" href="https://i.ibb.co" crossorigin>
   <link rel="preconnect" href="https://wa.me">
   <link rel="preload" as="image" href="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" fetchpriority="high">
 
-  <!-- ===== STYLE ===== -->
+  <!-- DESIGN SYSTEM / CSS -->
   <style>
     :root{
+      /* tokens */
       --bg:#0b0b0b; --panel:#111; --line:#1c1c1c; --muted:#bdbdbd; --text:#ededed;
-      --accent:#22c55e; --accent-2:#16a34a; --warn:#f59e0b;
+      --accent:#22c55e; --accent-2:#16a34a;
       --radius:16px; --gap:clamp(.75rem,2.2vw,1.25rem); --max:1180px;
       --shadow:0 0 0 2px rgba(34,197,94,.13) inset;
     }
-    /* Base */
+    /* base/reset */
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;color-scheme:dark light}
     body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     img{display:block;max-width:100%;height:auto}
     a{color:inherit;text-decoration:none}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:10px}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+    /* layout */
     .wrap{max-width:var(--max);margin-inline:auto;padding:clamp(1rem,2.5vw,1.5rem)}
-    .section{padding-block:clamp(1.5rem,4vw,3rem);content-visibility:auto;contain-intrinsic-size:1px 800px}
+    .section{padding-block:clamp(1.5rem,4vw,3rem);content-visibility:auto;contain-intrinsic-size:1px 900px}
     .h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:0}
     .h2{font-size:clamp(1.5rem,3vw,2rem);margin:0 0 .75rem}
     .h3{font-size:clamp(1.1rem,2.2vw,1.25rem);margin:.1rem 0 .25rem}
     .muted{color:var(--muted)}
-    .sr-only{position:absolute!important;clip:rect(1px,1px,1px,1px)!important;width:1px;height:1px;overflow:hidden;white-space:nowrap}
-    :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:10px}
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-    }
+    .sr-only{position:absolute!important;clip:rect(1px,1px,1px,1px)!important;width:1px;height:1px;overflow:hidden}
 
-    /* Header */
+    /* header/nav */
     header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
     .logo{display:flex;align-items:center;gap:.6rem;font-weight:800}
     .logo-badge{background:var(--accent-2);color:#0b0b0b;padding:.18rem .5rem;border-radius:10px}
     .menu{display:flex;gap:.9rem;list-style:none;margin:0;padding:0}
-    .menu a{opacity:.95}
     .toggle{display:none;appearance:none;background:#151515;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:.55rem .7rem}
 
-    /* Hero */
+    /* hero */
     .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--gap);align-items:center}
     .badges{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0 1rem}
     .badge{border:1px solid var(--line);background:#121212;padding:.45rem .7rem;border-radius:999px;font-size:.92rem}
@@ -67,15 +67,15 @@
     .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;color:#0b0b0b;font-weight:800}
     figure.hero-pic{margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3}
 
-    /* Grids */
+    /* grids / content */
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(.9rem,2.2vw,1.25rem)}
+    .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+    .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
+    .kpi b{font-size:clamp(1.4rem,3vw,1.8rem)}
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
     .gallery figure{margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
     .gallery figcaption{padding:.6rem .8rem;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
-    .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
-    .kpi b{font-size:clamp(1.4rem,3vw,1.8rem)}
     .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
     .plan{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
     .plan.featured{box-shadow:var(--shadow);border-color:var(--accent)}
@@ -83,46 +83,31 @@
     .faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem}
     .faq details+details{margin-top:.6rem}
 
-    /* Testemunhos */
-    .testis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
-    .testi{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
-    .testi .who{display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem}
-    .avatar{width:42px;height:42px;border-radius:50%;background:#222;border:1px solid #2a2a2a}
-
-    /* Antes/Depois */
-    .ab{display:grid;grid-template-columns:1fr;gap:.75rem}
-    .ab .frame{position:relative;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9}
-    .ab img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .ab .after{clip-path:inset(0 0 0 calc(var(--pos,50%)))}
-    .ab input[type=range]{width:100%}
-    .ab .bar{position:absolute;top:0;bottom:0;left:calc(var(--pos,50%));width:2px;background:var(--accent)}
-    .ab .tag{position:absolute;top:.5rem;left:.5rem;background:#0008;padding:.3rem .5rem;border-radius:8px;font-size:.85rem}
-
-    /* Form / Footer */
+    /* form/footer */
     form{display:grid;gap:.7rem;max-width:640px}
     input,textarea{padding:.85rem;border:1px solid #2a2a2a;border-radius:12px;background:#0f0f0f;color:var(--text)}
     footer{border-top:1px solid var(--line);text-align:center}
 
-    /* Cookie */
+    /* cookie */
     .cookie{position:fixed;inset:auto 1rem 4.5rem 1rem;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem;display:flex;align-items:center;justify-content:space-between;gap:.9rem}
     .cookie button{padding:.6rem .9rem;border-radius:10px;border:none;background:var(--accent);color:#0b0b0b;font-weight:800}
 
-    /* Sticky CTA (mobile) */
+    /* sticky CTA (mobile) */
     .sticky{position:fixed;inset:auto 0 0 0;background:#0e0e0ee6;border-top:1px solid #1c1c1c;padding:.7rem 1rem;display:none;gap:.6rem;align-items:center;justify-content:center;backdrop-filter:blur(10px);z-index:60}
     .sticky .btn{padding:.75rem 1rem}
+
+    /* responsive */
     @media (max-width: 960px){
       .hero{grid-template-columns:1fr}
-      .cards,.plans,.testis{grid-template-columns:1fr}
-      .kpis{grid-template-columns:repeat(2,1fr)}
+      .cards,.plans{grid-template-columns:1fr}
       .gallery{grid-template-columns:1fr}
       .menu{display:none}
       .toggle{display:inline-flex}
       .sticky{display:flex}
     }
-    @media (max-width: 520px){ .kpis{grid-template-columns:1fr} }
   </style>
 
-  <!-- ===== SCHEMA ===== -->
+  <!-- SCHEMA -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -140,25 +125,11 @@
     "address":{"@type":"PostalAddress","addressLocality":"Ibiporã","addressRegion":"PR","addressCountry":"BR"}
   }
   </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"byerickgarcia","url":"https://byerickgarcia.github.io/"}
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Atende presencial?","acceptedAnswer":{"@type":"Answer","text":"Sim, Ibiporã-PR e Londrina. Outras localidades no formato remoto/online."}},
-      {"@type":"Question","name":"Quando aparecem os primeiros sinais?","acceptedAnswer":{"@type":"Answer","text":"Com consistência de publicação e oferta alinhada, entre 2 e 6 semanas surgem indicadores claros de tração."}},
-      {"@type":"Question","name":"Qual a diferença entre os planos?","acceptedAnswer":{"@type":"Answer","text":"Start valida narrativa; Growth acelera autoridade; Pro escala com dados e campanhas."}}
-    ]
-  }
-  </script>
 </head>
 <body>
   <a class="sr-only" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- ===== HEADER ===== -->
+  <!-- HEADER -->
   <header role="banner">
     <nav class="wrap nav" aria-label="Principal">
       <a class="logo" href="#inicio" aria-label="Início"><span class="logo-badge">EG</span> Erick Garcia</a>
@@ -173,7 +144,7 @@
   </header>
 
   <main id="conteudo">
-    <!-- ===== HERO ===== -->
+    <!-- HERO -->
     <section id="inicio" class="wrap section hero" aria-label="Destaque">
       <div>
         <p class="muted">Ibiporã & Londrina • PT-BR</p>
@@ -196,7 +167,7 @@
       </figure>
     </section>
 
-    <!-- ===== BENEFÍCIOS ===== -->
+    <!-- BENEFÍCIOS -->
     <section id="beneficios" class="wrap section" aria-label="Benefícios">
       <h2 class="h2">Valor acima de tudo: narrativa, consistência e estética</h2>
       <div class="cards" role="list">
@@ -206,7 +177,7 @@
         </article>
         <article class="card" role="listitem">
           <h3 class="h3">Consistência que traciona</h3>
-          <p>Calendário e rotina de gravação para presença contínua. Alcance com direção — não volume por volume.</p>
+          <p>Calendário e rotina de gravação. Alcance com direção — não volume por volume.</p>
         </article>
         <article class="card" role="listitem">
           <h3 class="h3">Estética que dá clique</h3>
@@ -215,61 +186,28 @@
       </div>
     </section>
 
-    <!-- ===== PROVA SOCIAL ===== -->
+    <!-- PROVA SOCIAL -->
     <section id="resultados" class="wrap section" aria-label="Resultados e prova social">
       <h2 class="h2">Crescimento comprovado</h2>
+
       <div class="kpis" aria-label="Indicadores de destaque">
-        <div class="kpi"><div class="muted">TikTok</div><b>+78k</b><div class="muted">de 4k → 82k+</div></div>
-        <div class="kpi"><div class="muted">Instagram</div><b>+57k</b><div class="muted">de 56k → 113k+</div></div>
-        <div class="kpi"><div class="muted">Alcance</div><b>13M+</b><div class="muted">visualizações em campanha</div></div>
+        <div class="kpi"><div class="muted">TikTok</div><b>Comecei com 4 mil seguidores</b><div class="muted">Escalei via vídeos curtos de alto apelo</div></div>
+        <div class="kpi"><div class="muted">Instagram</div><b>Comecei com 56 mil seguidores</b><div class="muted">Aumento consistente com rotina e narrativa</div></div>
       </div>
+
       <div class="gallery" style="margin-top:var(--gap)">
         <figure>
           <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Conjunto de prints do Instagram com métricas e crescimento" loading="lazy" decoding="async" width="1200" height="900" style="aspect-ratio:4/3;object-fit:cover">
-          <figcaption>Instagram — iniciei com <strong>56k</strong> e ultrapassei <strong>113k+</strong> seguidores.</figcaption>
+          <figcaption>Instagram — início em <strong>56 mil</strong> seguidores (print real).</figcaption>
         </figure>
         <figure>
           <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Conjunto de prints do TikTok com alto alcance" loading="lazy" decoding="async" width="1200" height="900" style="aspect-ratio:4/3;object-fit:cover">
-          <figcaption>TikTok — iniciei com <strong>4k</strong> e ultrapassei <strong>82k+</strong> seguidores.</figcaption>
+          <figcaption>TikTok — início em <strong>4 mil</strong> seguidores (print real).</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- ===== ANTES / DEPOIS ===== -->
-    <section class="wrap section" aria-label="Antes e depois">
-      <h2 class="h2">De vídeo cru a conteúdo que vende</h2>
-      <div class="ab">
-        <div class="frame" id="abFrame" style="--pos:50%">
-          <img src="https://via.placeholder.com/1600x900/161616/ffffff?text=ANTES" alt="Antes">
-          <img class="after" src="https://via.placeholder.com/1600x900/16a34a/0b0b0b?text=DEPOIS" alt="Depois">
-          <span class="bar" aria-hidden="true"></span>
-          <span class="tag">Arraste para comparar</span>
-        </div>
-        <input id="abRange" type="range" min="0" max="100" value="50" aria-label="Controle de comparação antes e depois">
-      </div>
-    </section>
-
-    <!-- ===== TESTEMUNHOS ===== -->
-    <section class="wrap section" aria-label="Depoimentos">
-      <h2 class="h2">O que clientes dizem</h2>
-      <div class="testis">
-        <article class="testi">
-          <div class="who"><span class="avatar" aria-hidden="true"></span><strong>Cliente A</strong> • Restaurante</div>
-          <p>“Em 30 dias, saímos do zero para filas no almoço. Os vídeos criaram desejo e trouxeram gente nova todo dia.”</p>
-        </article>
-        <article class="testi">
-          <div class="who"><span class="avatar" aria-hidden="true"></span><strong>Cliente B</strong> • Clínica</div>
-          <p>“Nossos Reels viraram vitrine. Mantemos agenda cheia com conteúdo útil e consistente.”</p>
-        </article>
-        <article class="testi">
-          <div class="who"><span class="avatar" aria-hidden="true"></span><strong>Cliente C</strong> • E-commerce</div>
-          <p>“CTR das miniaturas subiu e o tráfego orgânico dobrou. O resultado refletiu direto nas vendas.”</p>
-        </article>
-      </div>
-      <p class="muted" style="margin-top:.5rem">Quer ver cases do seu nicho? Mando exemplos direcionados no WhatsApp.</p>
-    </section>
-
-    <!-- ===== PLANOS (valor, não preço) ===== -->
+    <!-- PLANOS (foco em valor, sem preço) -->
     <section id="planos" class="wrap section" aria-label="Planos e entregáveis">
       <h2 class="h2">Como eu entro no seu crescimento</h2>
       <div class="plans" role="list">
@@ -280,10 +218,10 @@
             <li>4 shorts/semana (roteiro + edição)</li>
             <li>Calendário e pautas mensais</li>
           </ul>
-          <p class="muted">Para validar a narrativa e ganhar tração.</p>
+          <p class="muted">Para validar narrativa e ganhar tração.</p>
           <a class="btn" href="#contato">Quero este</a>
         </article>
-        <article class="plan featureD" role="listitem" aria-label="Plano recomendado" style="box-shadow:var(--shadow);border-color:var(--accent)">
+        <article class="plan featured" role="listitem" aria-label="Plano recomendado">
           <h3 class="h3">Growth</h3>
           <ul>
             <li>7 shorts/semana</li>
@@ -306,7 +244,7 @@
       </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
+    <!-- FAQ -->
     <section class="wrap section faq" aria-label="Perguntas frequentes">
       <h2 class="h2">Perguntas frequentes</h2>
       <details>
@@ -319,11 +257,11 @@
       </details>
       <details>
         <summary>Qual a diferença entre os planos?</summary>
-        <p>Escopo e intensidade: Start valida narrativa; Growth acelera autoridade; Pro escala com dados e campanhas.</p>
+        <p>Start valida narrativa; Growth acelera autoridade; Pro escala com dados e campanhas.</p>
       </details>
     </section>
 
-    <!-- ===== CONTATO ===== -->
+    <!-- CONTATO -->
     <section id="contato" class="wrap section" aria-label="Contato">
       <h2 class="h2">Vamos destravar seu crescimento?</h2>
       <form onsubmit="event.preventDefault(); window.open('https://wa.me/5543988632851?text=Oi%20Erick,%20vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20conte%C3%BAdos%20curtos.', '_blank')">
@@ -341,40 +279,41 @@
       </form>
     </section>
 
-    <!-- ===== CTA FINAL ===== -->
+    <!-- CTA FINAL -->
     <section class="wrap section" aria-label="Último passo" style="text-align:center">
       <h2 class="h2">A sua audiência já está procurando — ajude ela a te encontrar</h2>
       <p class="muted">Começamos com um vídeo. Depois, repetimos o que funciona.</p>
       <div class="actions" style="justify-content:center;margin-top:.6rem">
-        <a class="btn primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20vim%20pelo%20site%20e%20quero%20come%C3%A7ar%20hoje." target="_blank" rel="noopener">Começar agora</a>
+        <a class="btn primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20quero%20come%C3%A7ar%20hoje." target="_blank" rel="noopener">Começar agora</a>
         <a class="btn" href="#resultados">Ver resultados</a>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="wrap section" role="contentinfo" style="padding-block:1.25rem">
     <p>© <span id="year"></span> Erick Garcia — Todos os direitos reservados.</p>
     <p class="muted">Site: <a href="https://byerickgarcia.github.io/">byerickgarcia.github.io</a></p>
   </footer>
 
-  <!-- ===== Sticky CTA (mobile) ===== -->
+  <!-- Sticky CTA (mobile) -->
   <div class="sticky" role="region" aria-label="Ação rápida">
     <a class="btn primary" href="https://wa.me/5543988632851?text=Oi%20Erick,%20quero%20crescer%20com%20shorts" target="_blank" rel="noopener">Falar no WhatsApp</a>
     <a class="btn" href="#planos">Planos</a>
   </div>
 
-  <!-- ===== COOKIE / LGPD ===== -->
+  <!-- Cookie / LGPD -->
   <div class="cookie" id="cookie" hidden role="dialog" aria-live="polite" aria-label="Consentimento de cookies">
     <span>Usamos cookies para melhorar sua experiência. <a href="#" style="text-decoration:underline">Saiba mais</a></span>
     <button id="accept">Aceitar</button>
   </div>
 
-  <!-- ===== JS ===== -->
+  <!-- JS -->
   <script>
     // Ano
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile nav
+    // Mobile nav acessível
     (function(){
       const btn = document.getElementById('navToggle');
       const menu = document.getElementById('menu');
@@ -391,16 +330,6 @@
       }));
     })();
 
-    // Antes/Depois slider
-    (function(){
-      const frame = document.getElementById('abFrame');
-      const range = document.getElementById('abRange');
-      if(!frame || !range) return;
-      const set = v => frame.style.setProperty('--pos', v + '%');
-      range.addEventListener('input', e => set(e.target.value));
-      set(range.value);
-    })();
-
     // LGPD-lite
     (function(){
       const KEY='eg_consent', el=document.getElementById('cookie');
@@ -410,7 +339,7 @@
       }
     })();
 
-    // DataLayer simples (troque por GTM/GA4 se quiser)
+    // DataLayer simples (troque por GTM/GA4 quando quiser)
     window.dataLayer = window.dataLayer || [];
     document.querySelectorAll('.btn,[data-cta]').forEach(b=>{
       b.addEventListener('click',()=>dataLayer.push({event:'cta_click',id:b.textContent.trim(),page:location.pathname}));
