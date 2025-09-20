@@ -11,21 +11,18 @@
   <link rel="canonical" href="https://byerickgarcia.github.io/">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <!-- família altamente legível; cai para stack nativa caso falhe -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-
-  <!-- topo -->
   <header class="hdr">
     <div class="wrap nav">
-      <a class="brand" href="#inicio" aria-label="Início">Erick Garcia</a>
+      <a class="brand" href="#inicio">Erick Garcia</a>
       <button id="menuToggle" class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
       <nav id="menu" class="menu" role="navigation">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
+        <a href="#planos">Planos</a>
         <a href="#prova">Prova</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -33,7 +30,7 @@
   </header>
 
   <main id="conteudo">
-    <!-- HERO enxuto -->
+    <!-- HERO -->
     <section id="inicio" class="sec hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
@@ -42,16 +39,16 @@
           <p class="lead">Roteiro direto, gravação enxuta e edição com identidade. Menos ruído, mais autoridade.</p>
           <div class="actions">
             <a class="btn primary" href="https://wa.me/5543988632851?text=Quero%20crescer%20com%20conte%C3%BAdo">Falar no WhatsApp</a>
-            <a class="btn" href="#servicos">Ver serviços</a>
+            <a class="btn" href="#planos">Ver planos</a>
           </div>
         </div>
         <figure class="hero-media">
-          <img src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Erick Garcia" width="900" height="900" loading="eager" decoding="async">
+          <img src="https://i.ibb.co/wZHZYy8J/Design-sem-nome.png" alt="Erick Garcia" width="900" height="900" loading="eager">
         </figure>
       </div>
     </section>
 
-    <!-- SOBRE enxuto -->
+    <!-- SOBRE -->
     <section id="sobre" class="sec soft">
       <div class="wrap grid-2">
         <div>
@@ -59,81 +56,115 @@
           <p class="body">Defino promessa, tom e narrativa. Depois capto e edito de forma consistente para transformar atenção em oportunidade.</p>
         </div>
         <figure class="card">
-          <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Evolução no TikTok" loading="lazy" decoding="async">
+          <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Evolução no TikTok" loading="lazy">
         </figure>
       </div>
     </section>
 
-    <!-- SERVIÇOS claros -->
+    <!-- SERVIÇOS -->
     <section id="servicos" class="sec">
       <div class="wrap">
         <h2 class="h2">Serviços</h2>
         <div class="grid-4">
-          <article class="card">
-            <h3>Fotografia</h3>
-            <p>Retrato, evento e produto. Direção de cena, luz correta e entrega pronta para redes.</p>
-          </article>
-          <article class="card">
-            <h3>Videomaker</h3>
-            <p>Roteiro → captação → edição. Talking-head e B-roll com ritmo e clareza.</p>
-          </article>
-          <article class="card">
-            <h3>Social Media</h3>
-            <p>Calendário, copy e gestão de comentários. Relatórios mensais sem enrolação.</p>
-          </article>
-          <article class="card featured" aria-label="Plano completo">
-            <h3>Social Ninja</h3>
-            <p class="muted">Social Media + Fotógrafo + Videomaker em um só fluxo.</p>
-          </article>
+          <article class="card"><h3>Fotografia</h3><p>Retrato, evento e produto com direção de cena e edição pronta para redes.</p></article>
+          <article class="card"><h3>Videomaker</h3><p>Roteiro → captação → edição. Talking-head e B-roll com ritmo e clareza.</p></article>
+          <article class="card"><h3>Social Media</h3><p>Calendário, copy e gestão de comentários. Relatórios mensais sem enrolação.</p></article>
+          <article class="card featured"><h3>Social Ninja</h3><p class="muted">Social Media + Fotógrafo + Videomaker em um só fluxo.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- PROVA real -->
-    <section id="prova" class="sec soft">
+    <!-- PLANOS com desconto trimestral -->
+    <section id="planos" class="sec soft">
       <div class="wrap">
-        <h2 class="h2">Crescimento comprovado</h2>
-        <div class="grid-2">
-          <figure class="card">
-            <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Conjunto de prints do Instagram" loading="lazy">
-            <figcaption class="muted small">Instagram — comecei com 56 mil.</figcaption>
-          </figure>
-          <figure class="card">
-            <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Conjunto de prints do TikTok" loading="lazy">
-            <figcaption class="muted small">TikTok — comecei com 4 mil.</figcaption>
-          </figure>
+        <h2 class="h2">Planos Mensais (com opção trimestral 10% OFF)</h2>
+        <p class="muted small">Pagamento mensal, contrato de 3 meses para obter o desconto.</p>
+
+        <div class="plans-grid">
+          <!-- Fotografia -->
+          <article class="card">
+            <h3>📸 Fotografia</h3>
+            <table class="plan-table">
+              <tr><th>Plano</th><th>Mensal</th><th>Trimestral*</th><th>Total 3 meses</th></tr>
+              <tr><td>Start</td><td>R$ 1.200</td><td>R$ 1.080</td><td>R$ 3.240</td></tr>
+              <tr><td>Pro</td><td>R$ 1.700</td><td>R$ 1.530</td><td>R$ 4.590</td></tr>
+            </table>
+          </article>
+
+          <!-- Videomaker -->
+          <article class="card">
+            <h3>🎬 Videomaker</h3>
+            <table class="plan-table">
+              <tr><th>Plano</th><th>Mensal</th><th>Trimestral*</th><th>Total 3 meses</th></tr>
+              <tr><td>Start</td><td>R$ 1.900</td><td>R$ 1.710</td><td>R$ 5.130</td></tr>
+              <tr><td>Pro</td><td>R$ 2.600</td><td>R$ 2.340</td><td>R$ 7.020</td></tr>
+            </table>
+          </article>
+
+          <!-- Social Media -->
+          <article class="card">
+            <h3>💻 Social Media</h3>
+            <table class="plan-table">
+              <tr><th>Plano</th><th>Mensal</th><th>Trimestral*</th><th>Total 3 meses</th></tr>
+              <tr><td>Start</td><td>R$ 1.600</td><td>R$ 1.440</td><td>R$ 4.320</td></tr>
+              <tr><td>Pro</td><td>R$ 2.200</td><td>R$ 1.980</td><td>R$ 5.940</td></tr>
+            </table>
+          </article>
+
+          <!-- Social Ninja -->
+          <article class="card featured">
+            <h3>🥷 Social Ninja <span class="badge">Mais escolhido</span></h3>
+            <table class="plan-table">
+              <tr><th>Plano</th><th>Mensal</th><th>Trimestral*</th><th>Total 3 meses</th></tr>
+              <tr><td>Start</td><td>R$ 3.400</td><td>R$ 3.060</td><td>R$ 9.180</td></tr>
+              <tr><td>Pro</td><td>R$ 4.800</td><td>R$ 4.320</td><td>R$ 12.960</td></tr>
+            </table>
+          </article>
         </div>
+        <p class="muted small">*valor mensal com desconto no contrato trimestral</p>
+      </div>
+    </section>
+
+    <!-- PROVA -->
+    <section id="prova" class="sec">
+      <div class="wrap grid-2">
+        <figure class="card">
+          <img src="https://i.ibb.co/tMxMs9HZ/IMG-2873.png" alt="Prints do Instagram" loading="lazy">
+          <figcaption class="muted small">Instagram — comecei com 56 mil.</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="https://i.ibb.co/6007kMs5/IMG-2875.jpg" alt="Prints do TikTok" loading="lazy">
+          <figcaption class="muted small">TikTok — comecei com 4 mil.</figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" class="sec">
+    <section id="contato" class="sec soft">
       <div class="wrap">
         <h2 class="h2">Vamos destravar seu crescimento?</h2>
         <form id="form" class="form">
-          <input name="nome" placeholder="Seu nome" autocomplete="name" required>
-          <input type="email" name="email" placeholder="Seu e-mail" autocomplete="email" required>
+          <input name="nome" placeholder="Seu nome" required>
+          <input type="email" name="email" placeholder="Seu e-mail" required>
           <textarea name="msg" rows="4" placeholder="Fale sobre seu projeto"></textarea>
           <div class="actions">
             <button class="btn primary" type="submit">Chamar no WhatsApp</button>
-            <a class="btn" href="#servicos">Ver serviços</a>
+            <a class="btn" href="#planos">Ver planos</a>
           </div>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- rodapé -->
   <footer class="ftr">
     <div class="wrap">
       <p>© <span id="year"></span> Erick Garcia • Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- sticky CTA (apenas mobile) -->
   <div class="sticky">
     <a class="btn primary" href="https://wa.me/5543988632851?text=Quero%20crescer%20com%20conte%C3%BAdo">WhatsApp</a>
-    <a class="btn" href="#servicos">Serviços</a>
+    <a class="btn" href="#planos">Planos</a>
   </div>
 
   <script src="script.js"></script>
